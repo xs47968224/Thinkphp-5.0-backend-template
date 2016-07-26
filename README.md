@@ -1,10 +1,10 @@
 基于 ThinkPHP 5.0 RC4 创建快速开发模板
 ===============
-版本 1.0
-1.已完成后台模板样式
-2.后台管理员模块
-3.后台权限管理
-4.表单字段view模板（只需在控制器中写好字段数组，view中直接include custom-field.html,参考administrator模块）
+ + 版本 1.0
+ + 1.已完成后台模板样式
+ + 2.后台管理员模块
+ + 3.后台权限管理
+ + 4.表单字段view模板（只需在控制器中写好字段数组，view中直接include custom-field.html,参考administrator模块）
 
 
 关于ThinkPHP 5.0 RC4
