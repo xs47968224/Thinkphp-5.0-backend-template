@@ -1,0 +1,215 @@
+<!-- ====================================================
+================= CONTENT ===============================
+===================================================== -->
+<section id="content">
+
+    <div class="page page-dashboard">
+
+        <div class="pageheader">
+
+            <h2>管理面板 <span></span></h2>
+
+            <div class="page-bar">
+
+                <ul class="page-breadcrumb">
+                    <li>
+                        <a href="{:url('/admin')}"><i class="fa fa-home"></i> 起始页</a>
+                    </li>
+                    <li>
+                        <a href="{:url('/admin')}">管理面板</a>
+                    </li>
+                </ul>
+
+                <div class="page-toolbar">
+                    <a role="button" tabindex="0" class="btn btn-lightred no-border">
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span>{:date("Y年m月d日")}</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- cards row -->
+        <div class="row">
+
+            <!-- col -->
+            <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card">
+                    <div class="front bg-greensea">
+
+                        <!-- row -->
+                        <div class="row">
+                            <!-- col -->
+                            <div class="col-xs-4">
+                                <i class="fa fa-users fa-4x"></i>
+                            </div>
+                            <!-- /col -->
+                            <!-- col -->
+                            <div class="col-xs-8">
+                                <p class="text-elg text-strong mb-0">10</p>
+                                <span>会员人数</span>
+                            </div>
+                            <!-- /col -->
+                        </div>
+                        <!-- /row -->
+
+                    </div>
+                    <div class="back bg-greensea">
+
+                        <!-- row -->
+                        <div class="row">
+                            <!-- col -->
+                            <div class="col-xs-6">
+                                <a href="{:url('/admin/user')}"><i class="fa fa-info fa-2x"></i> 查看</a>
+                            </div>
+                            <!-- /col -->
+                            <!-- col -->
+                            <div class="col-xs-6">
+                                <a href="{:url('/admin/user/add')}"><i class="fa fa-plus fa-2x"></i> 新增</a>
+                            </div>
+                            <!-- /col -->
+                        </div>
+                        <!-- /row -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card">
+                    <div class="front bg-lightred">
+
+                        <!-- row -->
+                        <div class="row">
+                            <!-- col -->
+                            <div class="col-xs-4">
+                                <i class="fa fa-shopping-cart fa-4x"></i>
+                            </div>
+                            <!-- /col -->
+                            <!-- col -->
+                            <div class="col-xs-8">
+                                <p class="text-elg text-strong mb-0">11</p>
+                                <span>订单数</span>
+                            </div>
+                            <!-- /col -->
+                        </div>
+                        <!-- /row -->
+
+                    </div>
+                    <div class="back bg-lightred">
+
+                        <!-- row -->
+                        <div class="row">
+                            <!-- col -->
+                            <div class="col-xs-12">
+                                <a href=":url('/admin/order')"><i class="fa fa-chain-broken fa-2x"></i> 查看</a>
+                            </div>
+                            <!-- /col -->
+                        </div>
+                        <!-- /row -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card">
+                    <div class="front bg-blue">
+
+                        <!-- row -->
+                        <div class="row">
+                            <!-- col -->
+                            <div class="col-xs-4">
+                                <i class="fa fa-cny fa-4x" aria-hidden="true"></i>
+                            </div>
+                            <!-- /col -->
+                            <!-- col -->
+                            <div class="col-xs-8">
+                                <p class="text-elg text-strong mb-0">100</p>
+                                <span>销售额</span>
+                            </div>
+                            <!-- /col -->
+                        </div>
+                        <!-- /row -->
+
+                    </div>
+                    <div class="back bg-blue">
+
+                        <!-- row -->
+                        <div class="row">
+
+                            <!-- col -->
+                            <div class="col-xs-12">
+                                <a href="{:url('/admin')}"><i class="fa fa-ellipsis-h fa-2x"></i> 更多</a>
+                            </div>
+                            <!-- /col -->
+
+                        </div>
+                        <!-- /row -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card">
+                    <div class="front bg-slategray">
+
+                        <!-- row -->
+                        <div class="row">
+                            <!-- col -->
+                            <div class="col-xs-4">
+                                <i class="fa fa-cny fa-4x" aria-hidden="true"></i>
+                            </div>
+                            <!-- /col -->
+                            <!-- col -->
+                            <div class="col-xs-8">
+                                <p class="text-elg text-strong mb-0">100</p>
+                                <span>上月总额</span>
+                            </div>
+                            <!-- /col -->
+                        </div>
+                        <!-- /row -->
+
+                    </div>
+                    <div class="back bg-slategray">
+
+                        <!-- row -->
+                        <div class="row">
+                            <!-- col -->
+                            <div class="col-xs-6">
+                                <a href="{:url('/admin')}"><i class="fa fa-chain-broken fa-2x"></i> 详细</a>
+                            </div>
+                            <!-- /col -->
+                            <!-- col -->
+                            <div class="col-xs-6">
+                                <a href="{:url('/admin')}"><i class="fa fa-ellipsis-h fa-2x"></i> 更多</a>
+                            </div>
+                            <!-- /col -->
+                        </div>
+                        <!-- /row -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /col -->
+
+        </div>
+        <!-- /row -->
+
+
+
+
+
+    </div>
+
+
+</section>
+<!--/ CONTENT -->

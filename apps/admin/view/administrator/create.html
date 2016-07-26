@@ -1,0 +1,81 @@
+<section id="content">
+
+    <div class="page page-fullwidth-layout">
+
+        <div class="pageheader">
+
+            <h2>{$data.module_name}</h2>
+
+            <div class="page-bar">
+
+                <ul class="page-breadcrumb">
+                    <li>
+                        <a href="{:url('/admin')}"><i class="fa fa-home"></i> 起始页</a>
+                    </li>
+                    <li>
+                        <a href="{:url('/module_url')}">{$data.module_name}</a>
+                    </li>
+                    <li>
+                        编辑{$data.module_name}
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="pagecontent">
+
+
+
+            <div class="add-nav">
+                <div class="nav-heading">
+                    <h3>编辑{$data.module_name}</h3>
+                    <span class="controls pull-right">
+                        <a href="{:url($data.module_url)}" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20 mr-5" data-toggle="tooltip" title="返回"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                    </span>
+                </div>
+
+                <!-- row -->
+                <div class="row">
+                    <!-- col -->
+                    <div class="col-md-12">
+
+
+                        <!-- tile -->
+                        <section class="tile">
+
+                            <!-- tile header -->
+                            <div class="tile-header dvd dvd-btm">
+                                <h1 class="custom-font"><strong>编辑 </strong> 基本信息</h1>
+                            </div>
+                            <!-- /tile header -->
+
+
+
+                            <!-- tile body -->
+                            <div class="tile-body">
+
+                                <form role="form" enctype="multipart/form-data" action="{:url($data.module_url).'add'}" method="post">
+                                    {include file="custom-fields" /}
+                                    <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-ok"></i>&nbsp;提交</button>
+                    			</form>
+
+                            </div>
+                            <!-- /tile body -->
+
+                        </section>
+                        <!-- /tile -->
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</section>
+<!--/ CONTENT -->

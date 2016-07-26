@@ -1,0 +1,84 @@
+{foreach name="data.edit_fields" item="field" key="key" }
+	{switch name=$field['type'] }
+        {case value="text"}
+            <div class="form-group">
+                {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
+
+                <input type="{$field['type']}" id="{if isset($field['id']) AND $field['id']}{$field['id']}{/if}" {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if} class="form-control {if isset($field['class']) AND $field['class']}{$field['class']}{/if}" name="{$key}" value="{if isset($item[$key]) AND $item[$key]}{$item[$key]}{/if}">
+
+                {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+            </div>
+        {/case}
+        {case value="password"}
+            <div class="form-group">
+                {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
+
+                <input type="{$field['type']}" id="{if isset($field['id']) AND $field['id']}{$field['id']}{/if}" {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if} class="form-control" name="{$key}" value="">
+
+                {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+            </div>
+        {/case}
+        {case value="file"}
+            <div class="form-group">
+                {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
+
+                <input type="{$field['type']}" id="{if isset($field['id']) AND $field['id']}{$field['id']}{/if}" {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if} name="{$key}">
+                {if isset($item[$key]) AND $item[$key] != ""}
+                    <a href="__UPLOADS__/{$item[$key]}" target="_blank"><img src="__UPLOADS__/{$item[$key]}" class="img-responsive img-thumbnail"></a>
+                    <a href="{:url($data.module_url . 'delete_image/' . $item['id'])}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                {/if}
+
+                {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+            </div>
+        {/case}
+        {case value="radio"}
+            <div class="checkbox">
+                {if isset($field['label']) AND $field['label']}<div>{$field['label']}</div>{/if}
+
+                {foreach $field['default'] as $ov => $ol }
+                    <label>
+                        <input type="{$field['type']}" name="{$key}" {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if} value="{$ov}" {if(isset($item[$key]) && $item[$key] == $ol)} checked="checked" {/if}> {$ol}
+                    </label>
+                {/foreach}
+
+                {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+            </div>
+        {/case}
+        {case value="checkbox"}
+            <div class="checkbox">
+                {if isset($field['label']) AND $field['label']}<div>{$field['label']}</div>{/if}
+
+                {foreach $field['default'] as $ov => $ol }
+                    <label>
+                        <input type="{$field['type']}" name="{$key}[]" {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if} value="{$ov}" {if(isset($item[$key]) && $item[$key] == $ol)} checked="checked" {/if}> {$ol}
+                    </label>
+                {/foreach}
+
+                {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+            </div>
+        {/case}
+        {case value="select"}
+            <div class="form-group">
+                {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
+
+                <select  name="{$key}" id="{if isset($field['id']) AND $field['id']}{$field['id']}{/if}" {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if}  class="form-control" style="max-width: 300px;">
+                    {foreach $field['default'] as $ov => $ol }
+                        <option value="{$ov}" {if isset($item[$key]) AND $item[$key] == $ol}selected="selected"{/if}>{$ol}</option>
+                    {/foreach}
+                </select>
+
+                {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+            </div>
+        {/case}
+        {case value="textarea"}
+            <div class="form-group">
+                {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
+
+                <textarea class="form-control" id="ckeditor-{$key}" name="{$key}" {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if}>{if isset($item[$key]) AND $item[$key]}{$item[$key]}{/if}</textarea>
+
+                {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+            </div>
+        {/case}
+        {default /} ;
+    {/switch}
+{/foreach}

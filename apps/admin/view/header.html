@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{$Think.config.object_name} | 后台管理系统</title>
+        <link rel="icon" type="image/ico" href="__PUBLIC__/images/favicon.ico" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- ============================================
+        ================= Stylesheets ===================
+        ============================================= -->
+        <!-- vendor css files -->
+        <link rel="stylesheet" href="__PUBLIC__/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/css/vendor/docs.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/css/vendor/animate.css">
+        <link rel="stylesheet" href="__PUBLIC__/css/vendor/font-awesome.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/magnific-popup/magnific-popup.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/daterangepicker/daterangepicker-bs3.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/morris/morris.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/owl-carousel/owl.theme.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/rickshaw/rickshaw.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/datetimepicker/css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/datatables/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/datatables/datatables.bootstrap.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/chosen/chosen.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/summernote/summernote.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/touchspin/jquery.bootstrap-touchspin.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/colorpicker/css/bootstrap-colorpicker.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/js/vendor/nestable/css/style.css">
+
+        <!-- project main css files -->
+        <link rel="stylesheet" href="__PUBLIC__/css/main.css">
+        <!--/ stylesheets -->
+
+        <link rel="stylesheet" href="__PUBLIC__/css/custom.css">
+
+        <!-- ==========================================
+        ================= Modernizr ===================
+        =========================================== -->
+        <script src="__PUBLIC__/js/vendor/modernizr/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <!--/ modernizr -->
+
+        <script src="__PUBLIC__/js/vendor/jquery/jquery-1.11.2.min.js"></script>
+
+        <script src="__PUBLIC__/js/vendor/bootstrap/bootstrap.min.js"></script>
+
+        <script src="__PUBLIC__/js/vendor/jRespond/jRespond.min.js"></script>
+
+
+    </head>
+    <body id="minovate" class="appWrapper">
+
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+        <!-- ====================================================
+        ================= Application Content ===================
+        ===================================================== -->
+        <div id="wrap" class="animsition">
+
+
+            <!-- ===============================================
+            ================= HEADER Content ===================
+            ================================================ -->
+            <section id="header">
+                <header class="clearfix">
+
+                    <!-- Branding -->
+                    <div class="branding">
+                        <a class="brand" href="{:url('/admin')}" target="_blank">
+                            <span>{$Think.config.object_name}</span>
+                        </a>
+                        <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <!-- Branding end -->
+
+                    <!-- Right-side navigation -->
+                    <ul class="nav-right pull-right list-inline">
+
+                        <li class="dropdown nav-profile">
+
+                            <a href class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user"></i>
+                                <span>{$Think.session.admin_nickname} <i class="fa fa-angle-down"></i></span>
+                            </a>
+
+                            <ul class="dropdown-menu animated littleFadeInRight" role="menu">
+
+                                <li>
+                                    <a role="button" tabindex="0" href="{:url('/admin/administrator/')}{$Think.session.uid}">
+                                        <i class="fa fa-user"></i>管理员信息
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{:url('/admin/logout')}" role="button" tabindex="0">
+                                        <i class="fa fa-sign-out"></i>登出
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+                    </ul>
+                    <!-- Right-side navigation end -->
+
+
+
+                </header>
+
+            </section>
+            <!--/ HEADER Content  -->
