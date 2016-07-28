@@ -1,0 +1,132 @@
+.pageheader {
+  margin-bottom: 30px;
+
+  h2 {
+    display: inline-block;
+    color: $font-color-dark;
+    font-size: $font-size-extra-large;
+    font-weight: $font-weight-light;
+    margin-top: 10px;
+
+    span {
+      font-size: $font-size-base;
+      color: $font-color-light;
+      font-style: $font-style-italic;
+    }
+  }
+
+  .page-bar {
+    background-color: white;
+
+    .page-breadcrumb {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: inline-block;
+
+      >li {
+        display: inline-block;
+
+        >a {
+          color: $font-color-light;
+          padding: 8px 10px;
+          display: inline-block;
+
+          &:hover {
+            color: $active-el;
+            text-decoration: none;
+          }
+        }
+
+        &:before {
+          @include icon;
+          content: "\f105";
+          color: $font-color-light;
+        }
+
+        &:first-child {
+          background-color: $sidebar-bg;
+          margin-right: 8px;
+
+          >a {
+            color: $link-color;
+
+            &:hover {
+              color: white;
+            }
+          }
+
+          &:before {
+            content: "";
+          }
+        }
+
+      }
+    }
+
+    .page-toolbar {
+      display: inline-block;
+      float: right;
+
+      .btn {
+        padding: 8px 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .page-bar {
+    .page-toolbar {
+      .btn {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page-bar {
+    .page-toolbar {
+      .btn {
+        width: 37px;
+        i:last-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .pageheader {
+    h2 {
+      span {
+        display: block;
+      }
+    }
+    .page-bar {
+      .page-breadcrumb {
+        width: 100%;
+        >li {
+          font-size: $font-size-small;
+          display: block;
+          padding-left: 10px;
+
+          &:first-child {
+            padding-left: 0;
+            margin-right: 0;
+          }
+          >a {
+            padding: 8px 5px;
+          }
+        }
+      }
+      .page-toolbar {
+        display: none;
+      }
+    }
+  }
+}

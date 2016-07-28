@@ -1,0 +1,42 @@
+.thumb {
+  width: 60px;
+  display: inline-block;
+
+  img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  &.thumb-sm {
+    width: 40px;
+  }
+
+  &.thumb-md {
+    width: 80px;
+  }
+
+  &.thumb-lg {
+    width: 100px;
+  }
+
+  &.thumb-xl {
+    width: 120px;
+  }
+
+  &.thumb-xxl {
+    width: 160px;
+  }
+  .thumb-header,
+  .thumb-body {
+    padding: 5px;
+    border: 1px solid $transparent-black-1;
+  }
+  .thumb-header {
+    border-bottom: 0;
+    background-color: rgba(0,0,0,.01);
+  }
+  .thumb-body {
+    @include box-shadow(0 1px 1px $transparent-black-05);
+  }
+}

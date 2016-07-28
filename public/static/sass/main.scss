@@ -1,0 +1,72 @@
+// import google fonts
+@import url(http://fonts.googleapis.com/css?family=Dosis:300,700|Ubuntu+Mono|Lato:300,400,700,300italic,400italic&subset=latin,latin-ext);
+
+// Bourbon
+@import 'bourbon/bourbon';  // bourbon plugin
+
+// My variables, mixins and colors
+@import "inc/mixins"; // main mixins
+@import "inc/colors"; // colors variables
+@import "inc/variables"; // other variables
+
+// Vendor
+
+//Pages
+@import "pages/global"; // global page settings
+@import "pages/tree"; // file tree settings
+@import "pages/chat"; // chat page settings
+@import "pages/mail"; // mail page settings
+@import "pages/search_results"; // search results page settings
+
+//Layouts
+@import "layouts/boxed"; // boxed layout
+@import "layouts/hz-menu"; // horizontal menu
+@import "layouts/rtl"; // rtl layout
+
+// Sections
+@import "sections/content"; // content section
+@import "sections/header"; // header section
+@import "sections/nav"; // navigation section
+@import "sections/nav-min"; // navigation sm/xs
+@import "sections/page-header"; // page header section
+@import "sections/rightbar"; // rightbar section
+@import "sections/page-loader"; // page loader
+@import "sections/add-nav"; // additional navbar under breadcrumbs
+
+// Components
+@import "components/tiles"; // tiles
+@import "components/form-elements"; // form elements
+@import "components/ui-elements"; // ui elements
+@import "components/dropdowns"; // dropdowns
+@import "components/charts"; // charts
+@import "components/buttons"; // buttons
+@import "components/icons";  // icons
+@import "components/lists"; // lists
+@import "components/media"; // media
+@import "components/thumbnails"; // thumbnails
+@import "components/typography"; // typography
+@import "components/loading-bar"; // loading bar
+@import "components/daterangepicker"; // daterangepicker
+@import "components/alerts-notifications"; // alerts and notifications
+@import "components/tabs-pills"; // tabs and pills
+@import "components/modals"; // modals
+@import "components/portlets"; // portlets
+@import "components/progress"; // progress bars
+@import "components/tbox"; // table layout
+@import "components/tree"; // file tree
+@import "components/chosen"; // chosen plugin
+@import "components/tables"; // tables
+@import "components/cards"; // two sided cards
+@import "components/carousel"; // carousel
+@import "components/widgets"; // widgets
+@import "components/streamline"; // streamline
+@import "components/maps"; // maps
+@import "components/calendar"; // calendar
+@import "components/gallery"; // gallery
+
+// Shared
+@import "shared/global"; // global shared settings
+@import "shared/color-schemes"; // color schemes
+@import "shared/print"; // print css
+@import "shared/animations"; // animations
+

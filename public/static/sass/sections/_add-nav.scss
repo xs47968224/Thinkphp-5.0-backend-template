@@ -1,0 +1,49 @@
+.add-nav {
+  margin-top: -29px;
+
+  .nav-heading {
+    background-color: white;
+    padding: 30px 20px;
+
+    h1,h2,h3,h4,h5,h6 {
+      margin: 0;
+      display: inline-block;
+    }
+  }
+
+  .nav-tabs {
+    background-color: white;
+
+    >li {
+      &:first-child {
+        margin-left: 10px;
+      }
+      >a {
+        color: $font-color;
+        padding: 0 8px 10px;
+        margin: 0 10px;
+
+        &:hover {
+          color: $brand-primary;
+          background-color: transparent;
+        }
+      }
+      &.active {
+        >a,
+        >a:hover,
+        >a:focus {
+          background-color: white;
+          color: $brand-primary;
+          font-weight: $font-weight-bold;
+        }
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .tab-content .tab-pane {
+    padding: 40px 0 15px;
+  }
+}

@@ -1,0 +1,497 @@
+// badges & labels
+
+.badge,
+.label {
+  font-size: $font-size-mini;
+  font-weight: $font-weight-normal;
+}
+
+.badge {
+  padding: 3px 5px;
+
+  &.badge-success {
+    background-color: $brand-success;
+  }
+  &.badge-danger {
+    background-color: $brand-danger;
+  }
+  &.badge-warning {
+    background-color: $brand-warning;
+  }
+  &.badge-info {
+    background-color: $brand-info;
+  }
+  &.badge-primary {
+    background-color: $brand-primary;
+  }
+  &.badge-default {
+    background-color: $brand-default;
+  }
+  &.badge-outline {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 1px solid;
+    background: transparent;
+  }
+}
+
+// accordions
+
+.panel-group {
+  .panel {
+    .panel-heading {
+      padding: 0;
+    }
+  }
+}
+
+// panels
+
+.panel {
+  border-radius: 0;
+  @include box-shadow(none);
+
+  .panel-heading {
+    border-radius: 0;
+
+    .panel-title >a {
+      display: block;
+      cursor: pointer;
+      font-size: $font-size-base;
+      padding: 10px 15px;
+
+      span {
+        @include transition(all .2s);
+      }
+
+      &.collapsed {
+        span {
+          color: $lighter-default;
+
+          i.fa-minus:before {
+            content: "\f067";
+          }
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        span {
+          padding-left: 5px;
+
+          &.text-muted {
+            padding-left: 0;
+          }
+        }
+      }
+
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &.panel-cyan {
+    border-color: $cyan;
+
+    >.panel-heading {
+      color: white;
+      background-color: $cyan;
+      border-color: $cyan;
+    }
+  }
+
+  &.panel-amethyst {
+    border-color: $amethyst;
+
+    >.panel-heading {
+      color: white;
+      background-color: $amethyst;
+      border-color: $amethyst;
+    }
+  }
+
+  &.panel-green {
+    border-color: $green;
+
+    >.panel-heading {
+      color: white;
+      background-color: $green;
+      border-color: $green;
+    }
+  }
+
+  &.panel-orange {
+    border-color: $orange;
+
+    >.panel-heading {
+      color: white;
+      background-color: $orange;
+      border-color: $orange;
+    }
+  }
+
+  &.panel-red {
+    border-color: $red;
+
+    >.panel-heading {
+      color: white;
+      background-color: $red;
+      border-color: $red;
+    }
+  }
+
+  &.panel-greensea {
+    border-color: $greensea;
+
+    >.panel-heading {
+      color: white;
+      background-color: $greensea;
+      border-color: $greensea;
+    }
+  }
+
+  &.panel-dutch {
+    border-color: $dutch;
+
+    >.panel-heading {
+      color: white;
+      background-color: $dutch;
+      border-color: $dutch;
+    }
+  }
+
+  &.panel-hotpink {
+    border-color: $hotpink;
+
+    >.panel-heading {
+      color: white;
+      background-color: $hotpink;
+      border-color: $hotpink;
+    }
+  }
+
+  &.panel-drank {
+    border-color: $drank;
+
+    >.panel-heading {
+      color: white;
+      background-color: $drank;
+      border-color: $drank;
+    }
+  }
+
+  &.panel-blue {
+    border-color: $blue;
+
+    >.panel-heading {
+      color: white;
+      background-color: $blue;
+      border-color: $blue;
+    }
+  }
+
+  &.panel-lightred {
+    border-color: $lightred;
+
+    >.panel-heading {
+      color: white;
+      background-color: $lightred;
+      border-color: $lightred;
+    }
+  }
+
+  &.panel-slategray {
+    border-color: $slategray;
+
+    >.panel-heading {
+      color: white;
+      background-color: $slategray;
+      border-color: $slategray;
+    }
+  }
+
+  &.panel-darkgray {
+    border-color: $darkgray;
+
+    >.panel-heading {
+      color: white;
+      background-color: $darkgray;
+      border-color: $darkgray;
+    }
+  }
+
+  &.panel-filled {
+    &.panel-default {
+      .panel-body {
+        background-color: white;
+      }
+    }
+    &.panel-primary {
+      .panel-body {
+        background-color: lighten($brand-primary, 10%);
+        color: white;
+      }
+    }
+    &.panel-success {
+      .panel-body {
+        background-color: lighten($brand-success, 40%);
+        color: darken($brand-success, 20%);
+      }
+    }
+    &.panel-warning {
+      .panel-body {
+        background-color: lighten($brand-warning, 35%);
+        color: darken($brand-warning, 20%);
+      }
+    }
+    &.panel-danger {
+      .panel-body {
+        background-color: lighten($brand-danger, 40%);
+        color: darken($brand-danger, 20%);
+      }
+    }
+    &.panel-info {
+      .panel-body {
+        background-color: lighten($brand-info, 35%);
+        color: darken($brand-info, 20%);
+      }
+    }
+    &.panel-cyan {
+      .panel-body {
+        background-color:  $lighten-cyan;
+        color: white;
+      }
+    }
+    &.panel-amethyst {
+      .panel-body {
+        background-color:  $lighten-amethyst;
+        color: white;
+      }
+    }
+    &.panel-green {
+      .panel-body {
+        background-color:  $lighten-green;
+        color: white;
+      }
+    }
+    &.panel-orange {
+      .panel-body {
+        background-color:  $lighten-orange;
+        color: white;
+      }
+    }
+    &.panel-red {
+      .panel-body {
+        background-color:  $lighten-red;
+        color: white;
+      }
+    }
+    &.panel-greensea {
+      .panel-body {
+        background-color:  $lighten-greensea;
+        color: white;
+      }
+    }
+    &.panel-dutch {
+      .panel-body {
+        background-color:  $lighten-dutch;
+        color: white;
+      }
+    }
+    &.panel-hotpink {
+      .panel-body {
+        background-color:  $lighten-hotpink;
+        color: white;
+      }
+    }
+    &.panel-drank {
+      .panel-body {
+        background-color:  $lighten-drank;
+        color: white;
+      }
+    }
+    &.panel-blue {
+      .panel-body {
+        background-color:  $lighten-blue;
+        color: white;
+      }
+    }
+    &.panel-lightred {
+      .panel-body {
+        background-color:  $lighten-lightred;
+        color: white;
+      }
+    }
+    &.panel-slategray {
+      .panel-body {
+        background-color:  $lighten-slategray;
+        color: white;
+      }
+    }
+    &.panel-darkgray {
+      .panel-body {
+        background-color:  $lighten-darkgray;
+        color: white;
+      }
+    }
+  }
+
+  &.panel-transparent {
+    border-left: 0;
+    border-right: 0;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    .panel-heading {
+      background: none;
+
+      .panel-title >a{
+        padding: 15px;
+      }
+    }
+
+    .panel-body {
+      background-color: #f7f7f7;
+      padding: 0;
+    }
+  }
+}
+
+.panel-group {
+  .panel {
+    border-radius: 0;
+  }
+}
+
+.panel-group .panel.panel-transparent + .panel.panel-transparent {
+  margin-top: -1px;
+}
+
+// wells
+
+.well {
+  border-radius: 0;
+  @include box-shadow(none);
+}
+
+// breadcrumb
+
+.breadcrumb {
+  border-radius: 0;
+
+  > li + li:before {
+    content: "\f105";
+    @include icon;
+  }
+}
+
+// datepicker
+
+.datepicker {
+  .btn-default {
+    border-width: 0;
+    width: 100%;
+    @include box-shadow(none);
+
+    .glyphicon {
+      top: 2px;
+    }
+  }
+  .btn[disabled] {
+    opacity: .3;
+  }
+  .btn-info {
+    color: white!important;
+    .text-info {
+      color: white;
+    }
+    &.active {
+      background-color: $brand-info!important;
+    }
+  }
+
+  td>em {
+    color: $font-color-light;
+  }
+}
+
+//pagination & pager
+
+.pagination {
+  border-radius: 0;
+
+  >li {
+    >a,
+    >span {
+      border-color: lighten($font-color, 48%);
+
+      &:hover,&:focus {
+        background-color: lighten($brand-default, 53%);
+      }
+    }
+    &:first-child,
+    &:last-child {
+      >a {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.pager {
+  >li {
+    >a,
+    >span {
+      border-color: lighten($font-color, 48%);
+
+      &:hover,&:focus {
+        background-color: lighten($brand-default, 53%);
+      }
+    }
+  }
+}
+
+//popover
+.popover {
+  border-radius: 0;
+  @include box-shadow(none);
+  padding: 0;
+  border-color: lighten($font-color, 40%);
+
+  .popover-title {
+    background-color: lighten($font-color, 55%);
+    font-weight: $font-weight-bold;
+    border-radius: 0;
+  }
+
+  .popover-content {
+    font-size: $font-size-small;
+    color: $font-color-light;
+  }
+}
+
+// check toggler
+check-toggler,
+.check-toggler {
+  cursor: pointer;
+  padding: 2px;
+
+  &:before {
+    content: "\f00d";
+    @include icon;
+    color: $brand-danger;
+  }
+
+  &.checked {
+    &:before {
+      content: "\f00c";
+      color: $brand-success;
+    }
+  }
+}

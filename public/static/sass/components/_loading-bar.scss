@@ -1,0 +1,26 @@
+#loading-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+
+  .bar {
+    position: absolute;
+    background-color: $active-el;
+    z-index: 9;
+  }
+  .peg {
+    @include box-shadow($active-el 1px 0 6px 1px);
+  }
+}
+
+#loading-bar-spinner {
+  position: absolute;
+  z-index: 99;
+
+  .spinner-icon {
+    border-top-color: $active-el;
+    border-left-color: $active-el;
+  }
+}
+

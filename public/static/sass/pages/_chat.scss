@@ -1,0 +1,222 @@
+.page-chat {
+  #inbox {
+    margin: 20px -15px -15px;
+
+    >li {
+      border-bottom: 1px solid $transparent-black-1;
+
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      >a {
+        display: block;
+        position: relative;
+        color: $font-color;
+        padding: 15px;
+
+        &:hover {
+          text-decoration: none;
+          background-color: $transparent-white-5;
+
+          .chat-actions {
+            display: block;
+          }
+        }
+
+        &:focus {
+          text-decoration: none;
+        }
+
+        .media {
+          position: relative;
+          height: 45px;
+
+          .media-body {
+            width: 100%;
+            display: inline-block;
+            padding-right: 40px;
+            position: absolute;
+            top: 0;
+          }
+        }
+
+        .message {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          display: block;
+          width: 85%;
+        }
+
+        .chat-actions {
+          font-size: 11px;
+          display: none;
+
+          >span {
+            margin-left: 4px;
+            cursor: pointer;
+
+            &.archive {
+              &:hover {
+                color: $red;
+              }
+            }
+
+            &.mark-unread {
+              &:hover {
+                color: $greensea;
+                i {
+                  &:before {
+                    content: "\f111";
+                  }
+                }
+              }
+            }
+
+            &.mark-readed {
+              color: $greensea;
+              &:hover {
+                color: $font-color;
+                i {
+                  &:before {
+                    content: "\f10c";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.active {
+        >a {
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  ul.chats {
+    >li {
+      .media-body {
+        padding: 10px;
+      }
+
+      &.in {
+        .media-body {
+          background-color: white;
+          padding-left: 20px;
+        }
+      }
+
+      &.out {
+        .media-body {
+          background-color: $transparent-white-5;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+ul.chats {
+  list-style: none;
+
+  >li {
+    margin: 20px auto;
+    font-size: $font-size-small;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .media {
+      position: relative;
+      z-index: 1;
+    }
+
+    .name,
+    .datetime {
+      font-size: $font-size-base;
+      font-weight: 400;
+    }
+
+    .datetime {
+      color: $font-color-light;
+      font-size: $font-size-small;
+    }
+
+    &.conversation-divider {
+      font-size: $font-size-mini;
+      color: white;
+      text-align: center;
+
+      span {
+        display: inline-block;
+        position: relative;
+        background-color: $transparent-black-15;
+        padding: 4px 10px;
+        @include border-radius(2px);
+        @include box-shadow(0 1px 1px $transparent-black-05);
+      }
+    }
+
+    &.in {
+      .media-body {
+        text-align: left;
+        border-left: 3px solid $greensea;
+        margin-left: 65px;
+        padding-left: 5px;
+      }
+      .name {
+        color: $greensea;
+      }
+      .media {
+        &:after {
+          content: "";
+          @include triangle(8px, $greensea, left);
+          position: absolute;
+          top: 18px;
+          left: 36px;
+          z-index: 1;
+        }
+      }
+    }
+
+    &.out {
+      .media-body {
+        border-right: 3px solid $lightred;
+        margin-right: 65px;
+        text-align: right;
+        padding-right: 5px;
+      }
+      .name {
+        color: $lightred;
+      }
+      .name,
+      .datetime {
+        text-align: right;
+      }
+      .media {
+        &:after {
+          content: "";
+          @include triangle(8px, $lightred, right);
+          position: absolute;
+          top: 18px;
+          right: 36px;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+.chat-form {
+  padding: 10px;
+  background-color: $bright-default;
+  overflow: hidden;
+  clear: both;
+}

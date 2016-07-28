@@ -1,0 +1,1782 @@
+// button effects - thanks to tympanus.net
+
+/* General button style (reset) */
+.btn-ef {
+  border: none;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  @include transition(all .3s);
+
+  &:focus,&:active {
+    outline: none;
+    @include box-shadow(none);
+  }
+
+  &:after {
+    content: '';
+	position: absolute;
+	z-index: -1;
+    @include transition(all .3s);
+  }
+
+  // button 1
+  &.btn-ef-1 {
+    background: none;
+    border: 2px solid $brand-default;
+	color: $brand-default;
+
+    // button effect 1a
+    &.btn-ef-1a {
+      &:hover,&:active,&.active {
+        background-color: $brand-default;
+        color: white;
+      }
+    }
+
+    // button effect 1b
+    &.btn-ef-1b {
+
+      &:after {
+        width: 100%;
+        height: 0;
+        top: 0;
+        left: 0;
+        background: $brand-default;
+      }
+
+      &:hover,&:active,&.active {
+        color: white;
+
+        &:after {
+          height: 100%;
+        }
+      }
+    }
+
+    // button effect 1c
+    &.btn-ef-1c {
+
+      &:after {
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: $brand-default;
+      }
+
+      &:hover,&:active,&.active {
+        color: white;
+
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+
+    // button effect 1d
+    &.btn-ef-1d {
+      overflow: hidden;
+
+      &:after {
+        width: 0;
+        height: 103%;
+        top: 50%;
+	    left: 50%;
+        background: $brand-default;
+        opacity: 0;
+        @include transform(translateX(-50%) translateY(-50%));
+      }
+
+      &:hover,&:active,&.active {
+        color: white;
+
+        &:after {
+          width: 80%;
+	      opacity: 1;
+        }
+      }
+
+      &:active,&.active {
+        &:after {
+          width: 101%;
+	      opacity: 1;
+        }
+      }
+    }
+
+    // button effect 1e
+    &.btn-ef-1e {
+      overflow: hidden;
+
+      &:after {
+        width: 110%;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        background: $brand-default;
+        opacity: 0;
+        @include transform(translateX(-50%) translateY(-50%) rotate(45deg));
+      }
+
+      &:hover,&:active,&.active {
+        color: white;
+
+        &:after {
+          height: 160%;
+	      opacity: 1;
+        }
+      }
+
+      &:active,&.active {
+        &:after {
+          height: 400%;
+	      opacity: 1;
+        }
+      }
+    }
+    // button effect 1f
+    &.btn-ef-1f{
+      overflow: hidden;
+
+      &:after {
+        width: 101%;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        background: $brand-default;
+        opacity: 0;
+        @include transform(translateX(-50%) translateY(-50%));
+      }
+
+      &:hover,&:active,&.active {
+        color: white;
+
+        &:after {
+          height: 75%;
+	      opacity: 1;
+        }
+      }
+
+      &:active,&.active {
+        &:after {
+          height: 130%;
+	      opacity: 1;
+        }
+      }
+    }
+
+    &.btn-ef-1-primary {
+      border-color: $brand-primary;
+      color: $brand-primary;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $brand-primary;
+        }
+      }
+
+      &:after {
+        background-color: $brand-primary;
+      }
+    }
+    &.btn-ef-1-success {
+      border-color: $brand-success;
+      color: $brand-success;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $brand-success;
+        }
+      }
+
+      &:after {
+        background-color: $brand-success;
+      }
+    }
+    &.btn-ef-1-warning {
+      border-color: $brand-warning;
+      color: $brand-warning;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $brand-warning;
+        }
+      }
+
+      &:after {
+        background-color: $brand-warning;
+      }
+    }
+    &.btn-ef-1-danger {
+      border-color: $brand-danger;
+      color: $brand-danger;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $brand-danger;
+        }
+      }
+
+      &:after {
+        background-color: $brand-danger;
+      }
+    }
+    &.btn-ef-1-info {
+      border-color: $brand-info;
+      color: $brand-info;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $brand-info;
+        }
+      }
+
+      &:after {
+        background-color: $brand-info;
+      }
+    }
+    &.btn-ef-1-cyan {
+      border-color: $cyan;
+      color: $cyan;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $cyan;
+        }
+      }
+
+      &:after {
+        background-color: $cyan;
+      }
+    }
+    &.btn-ef-1-amethyst {
+      border-color: $amethyst;
+      color: $amethyst;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $amethyst;
+        }
+      }
+
+      &:after {
+        background-color: $amethyst;
+      }
+    }
+    &.btn-ef-1-green {
+      border-color: $green;
+      color: $green;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $green;
+        }
+      }
+
+      &:after {
+        background-color: $green;
+      }
+    }
+    &.btn-ef-1-orange {
+      border-color: $orange;
+      color: $orange;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $orange;
+        }
+      }
+
+      &:after {
+        background-color: $orange;
+      }
+    }
+    &.btn-ef-1-red {
+      border-color: $red;
+      color: $red;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $red;
+        }
+      }
+
+      &:after {
+        background-color: $red;
+      }
+    }
+    &.btn-ef-1-greensea {
+      border-color: $greensea;
+      color: $greensea;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $greensea;
+        }
+      }
+
+      &:after {
+        background-color: $greensea;
+      }
+    }
+    &.btn-ef-1-dutch {
+      border-color: $dutch;
+      color: $dutch;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $dutch;
+        }
+      }
+
+      &:after {
+        background-color: $dutch;
+      }
+    }
+    &.btn-ef-1-hotpink {
+      border-color: $hotpink;
+      color: $hotpink;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $hotpink;
+        }
+      }
+
+      &:after {
+        background-color: $hotpink;
+      }
+    }
+    &.btn-ef-1-drank {
+      border-color: $drank;
+      color: $drank;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $drank;
+        }
+      }
+
+      &:after {
+        background-color: $drank;
+      }
+    }
+    &.btn-ef-1-blue {
+      border-color: $blue;
+      color: $blue;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $blue;
+        }
+      }
+
+      &:after {
+        background-color: $blue;
+      }
+    }
+    &.btn-ef-1-lightred {
+      border-color: $lightred;
+      color: $lightred;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $lightred;
+        }
+      }
+
+      &:after {
+        background-color: $lightred;
+      }
+    }
+    &.btn-ef-1-slategray {
+      border-color: $slategray;
+      color: $slategray;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $slategray;
+        }
+      }
+
+      &:after {
+        background-color: $slategray;
+      }
+    }
+    &.btn-ef-1-darkgray {
+      border-color: $darkgray;
+      color: $darkgray;
+
+      &.btn-ef-1a {
+        &:hover,&:active,&.active {
+          background-color: $darkgray;
+        }
+      }
+
+      &:after {
+        background-color: $darkgray;
+      }
+    }
+  }
+  // button 2
+  &.btn-ef-2 {
+    background: #e6e6e6;
+    border-radius: 0 0 4px 4px;
+    @include box-shadow(0 3px);
+    color: $brand-default;
+    @include transition(none);
+
+    &.btn-rounded {
+      border-radius: 4px;
+    }
+
+    &.btn-ef-2a {
+      &:hover {
+        top: 2px;
+        @include box-shadow(0 1px);
+      }
+
+      &:active,&.active {
+        top: 3px;
+        @include box-shadow(0 0);
+      }
+    }
+
+    &.btn-ef-2b {
+      &:hover {
+        top: -2px;
+        @include box-shadow(0 5px);
+      }
+
+      &:active,&.active {
+        top: 3px;
+        @include box-shadow(0 0);
+      }
+    }
+
+    &.btn-ef-2c {
+      @include box-shadow(-3px 0);
+
+      &:hover {
+        left: -2px;
+        @include box-shadow(-1px 0);
+      }
+
+      &:active,&.active {
+        left: -3px;
+        @include box-shadow(0 0);
+      }
+    }
+
+    &.btn-ef-2d {
+      @include box-shadow(3px 0);
+
+      &:hover {
+        left: 2px;
+        @include box-shadow(1px 0);
+      }
+
+      &:active,&.active {
+        left: 3px;
+        @include box-shadow(0 0);
+      }
+    }
+
+    &.btn-ef-2-primary {
+      color: $brand-primary;
+      background-color: lighten($brand-primary, 35%);
+    }
+    &.btn-ef-2-success {
+      color: $brand-success;
+      background-color: lighten($brand-success, 35%);
+    }
+    &.btn-ef-2-warning {
+      color: $brand-warning;
+      background-color: lighten($brand-warning, 30%);
+    }
+    &.btn-ef-2-danger {
+      color: $brand-danger;
+      background-color: lighten($brand-danger, 35%);
+    }
+    &.btn-ef-2-info {
+      color: $brand-info;
+      background-color: lighten($brand-info, 35%);
+    }
+    &.btn-ef-2-cyan {
+      color: $cyan;
+      background-color: $bright-cyan;
+    }
+    &.btn-ef-2-amethyst {
+      color: $amethyst;
+      background-color: $bright-amethyst;
+    }
+    &.btn-ef-2-green {
+      color: $green;
+      background-color: $bright-green;
+    }
+    &.btn-ef-2-orange {
+      color: orange;
+      background-color: $bright-orange;
+    }
+    &.btn-ef-2-red {
+      color: $red;
+      background-color: $bright-red;
+    }
+    &.btn-ef-2-greensea {
+      color: $greensea;
+      background-color: $bright-greensea;
+    }
+    &.btn-ef-2-dutch {
+      color: $dutch;
+      background-color: $bright-dutch;
+    }
+    &.btn-ef-2-hotpink {
+      color: $hotpink;
+      background-color: $bright-hotpink;
+    }
+    &.btn-ef-2-drank {
+      color: $drank;
+      background-color: $bright-drank;
+    }
+    &.btn-ef-2-blue {
+      color: $blue;
+      background-color: $bright-blue;
+    }
+    &.btn-ef-2-lightred {
+      color: $lightred;
+      background-color: $bright-lightred;
+    }
+    &.btn-ef-2-slategray {
+      color: $slategray;
+      background-color: $bright-slategray;
+    }
+    &.btn-ef-2-darkgray {
+      color: $darkgray;
+      background-color: $bright-darkgray;
+    }
+  }
+
+  //button 3
+  &.btn-ef-3 {
+
+    &.btn-default {
+      background: #e2e2e2;
+	  color: $font-color;
+
+      &:hover {
+        background: darken(#e2e2e2, 10%);
+      }
+
+      &:active,&.active {
+        background: darken(#e2e2e2, 15%);
+      }
+
+      &:focus {
+        background: #e2e2e2;
+	    color: $font-color;
+      }
+    }
+
+    &:active {
+      top: 2px;
+    }
+
+    >i {
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      line-height: 32px;
+      font-size: 130%;
+      width: 40px;
+    }
+
+    /* Button 3a */
+    &.btn-ef-3a {
+        padding-left: 50px;
+
+      >i {
+        background: $transparent-black-05;
+      }
+    }
+
+    /* Button 3b */
+    &.btn-ef-3b {
+        padding-left: 45px;
+
+      >i {
+        width: 36px;
+        border-right: 1px solid $transparent-white-3;
+      }
+    }
+
+    /* Button 3c */
+    &.btn-ef-3c {
+      padding-right: 45px;
+      overflow: hidden;
+
+      >i {
+        left: auto;
+	    right: -6px;
+        font-size: 12px;
+	    z-index: 2;
+      }
+
+      &:after {
+        width: 30%;
+        height: 200%;
+        background: $transparent-white-1;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        margin: -5px 0 0 -5px;
+        -webkit-transform-origin: 0 0;
+        -webkit-transform: rotate(-20deg);
+        -moz-transform-origin: 0 0;
+        -moz-transform: rotate(-20deg);
+        -ms-transform-origin: 0 0;
+        -ms-transform: rotate(-20deg);
+        transform-origin: 0 0;
+        transform: rotate(-20deg);
+      }
+
+      &:hover {
+        &:after {
+          width: 40%;
+        }
+      }
+    }
+  }
+  //button 4
+  &.btn-ef-4 {
+    overflow: hidden;
+    padding: 6px 30px;
+
+    &.btn-default {
+      border: 2px solid #ccc;
+
+      &:hover {
+        border: 2px solid darken(#ccc, 10%);
+      }
+    }
+
+    &:active,&.active {
+      top: 2px;
+    }
+
+    >i {
+      position: absolute;
+      height: 100%;
+      line-height: 32px;
+      @include transition(all .3s);
+    }
+
+    /* Button 4a */
+    &.btn-ef-4a>i {
+      left: 130%;
+      top: 0;
+    }
+
+    &.btn-ef-4a:hover>i {
+      left: 80%;
+    }
+
+    /* Button 4b */
+    &.btn-ef-4b>i {
+        left: 70%;
+        opacity: 0;
+        top: 0;
+    }
+
+    &.btn-ef-4b:hover>i {
+        left: 80%;
+        opacity: 1;
+    }
+
+    /* Button 4c */
+    &.btn-ef-4c>i {
+        left: -50%;
+        top: 0;
+    }
+
+    &.btn-ef-4c:hover>i {
+        left: 10%;
+    }
+
+    /* Button 4d */
+    &.btn-ef-4d>i {
+        left: 30%;
+        opacity: 0;
+        top: 0;
+    }
+
+    &.btn-ef-4d:hover>i {
+        left: 10%;
+        opacity: 1;
+    }
+  }
+  //button 5
+  &.btn-ef-5 {
+    overflow: hidden;
+    @include backface-visibility(hidden);
+
+    &.btn-default {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ccc;
+
+      &:hover {
+        border-color: darken(#ccc, 10%);
+      }
+    }
+
+    &:active,&.active {
+      top: 2px;
+
+      i {
+        color: white;
+      }
+    }
+
+    span {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      @include transition(all .3s);
+      @include backface-visibility(hidden);
+    }
+
+    i {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      line-height: 1.8;
+      font-size: 130%;
+      @include transition(all .3s);
+    }
+
+    /* Button 5a */
+    &.btn-ef-5a {
+      &:hover {
+        span {
+          @include transform(translateY(300%));
+        }
+
+        i {
+          top: 0;
+        }
+      }
+      i {
+        left: 0;
+        top: -100%;
+      }
+    }
+
+    /* Button 5b */
+    &.btn-ef-5b {
+      &:hover {
+        span {
+          @include transform(translateX(200%));
+        }
+
+        i {
+          left: 0;
+        }
+      }
+      i {
+        left: -100%;
+        top: 0;
+      }
+    }
+  }
+  //button 6
+  &.btn-ef-6 {
+    border-width: 0;
+    padding: 8px 14px;
+    @include transition(none);
+
+    &.btn-default {
+      background: #e2e2e2;
+	  color: $font-color;
+
+      &:hover {
+        background: darken(#e2e2e2, 10%);
+      }
+
+      &:active,&.active {
+        background: darken(#e2e2e2, 15%);
+      }
+
+      &:focus {
+        background: #e2e2e2;
+	    color: $font-color;
+      }
+    }
+
+    &:active, &.active {
+      top: 2px;
+    }
+
+    &:hover {
+      padding: 6px 12px;
+      border-width: 2px;
+      background: transparent!important;
+      color: $font-color;
+    }
+
+    /* Button 6a */
+    &.btn-ef-6a {
+      border-style: solid;
+    }
+
+     /* Button 6b */
+    &.btn-ef-6b {
+      border-style: dashed;
+    }
+
+     /* Button 6c */
+    &.btn-ef-6c {
+      border-style: dotted;
+    }
+
+     /* Button 6d */
+    &.btn-ef-6d {
+      padding: 10px 16px;
+      border-style: double;
+
+      &:hover {
+        border-width: 4px;
+        padding: 6px 12px;
+      }
+    }
+  }
+
+  //button 7
+  &.btn-ef-7 {
+    border-width: 1px;
+    border-style: solid;
+    padding: 6px 16px 6px 40px;
+
+    &:not(.btn-icon-only) {
+      i {
+        color: $transparent-white-5;
+      }
+    }
+
+    &.btn-default {
+      border-color: #ccc;
+
+      &:not(.btn-icon-only) {
+        i {
+          color: $transparent-black-5;
+        }
+      }
+
+      &:hover {
+        border-color: darken(#ccc, 10%);
+      }
+    }
+
+    /* Button 7a */
+    &.btn-ef-7a {
+      overflow: hidden;
+
+      i {
+        position: absolute;
+        left: 0;
+        width: 32%;
+        font-size: 130%;
+        line-height: 1.1;
+      }
+
+      &.btn-activated {
+        @include animation(fadeOutText 0.5s);
+
+        i {
+          @include animation(moveToRight 0.5s);
+        }
+      }
+    }
+
+    /* Button 7b */
+    &.btn-ef-7b {
+      overflow: hidden;
+
+      i {
+        position: absolute;
+        left: 0;
+        width: 28%;
+        font-size: 130%;
+        line-height: 1.1;
+      }
+
+      &.btn-activated {
+        i {
+          @include animation(scaleUp 0.5s);
+        }
+      }
+    }
+
+    /* Button 7c */
+    &.btn-ef-7c {
+      overflow: hidden;
+
+      i {
+        z-index: 1;
+      }
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 0;
+        width: 0;
+        background: $transparent-black-1;
+        @include transition(none);
+      }
+
+      &.btn-activated {
+        &:after {
+          @include animation(fillToRight 0.7s forwards);
+        }
+      }
+    }
+
+    /* Button 7d */
+    &.btn-ef-7d {
+      overflow: hidden;
+
+      i {
+        z-index: 1;
+      }
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 100%;
+        z-index: 0;
+        background: $transparent-black-1;
+        @include transition(none);
+      }
+
+      &.btn-activated {
+        &:after {
+          @include animation(emptyBottom 0.7s forwards);
+        }
+      }
+    }
+
+    /* Button 7e */
+    &.btn-ef-7e {
+      i.after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        font-size: 22px;
+        line-height: 42px;
+        color: #ea515e;
+        @include transform(scale(0));
+        @include opacity(0);
+        @include transition(none);
+      }
+
+      &.btn-activated {
+        i.after {
+          @include animation(scaleFade 0.5s forwards);
+        }
+      }
+    }
+
+    /* Button 7f */
+    &.btn-ef-7f {
+      i.after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        font-size: 22px;
+        line-height: 42px;
+        color: #ffe44d;
+        visibility: hidden;
+        @include transform(scale(4));
+        @include opacity(0);
+        @include transition(none);
+      }
+
+      &.btn-activated {
+        i.after {
+          visibility: visible;
+          @include animation(dropDown 0.3s forwards);
+        }
+      }
+    }
+
+    /* Button 7g */
+    &.btn-ef-7g {
+      i.after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        font-size: 22px;
+        line-height: 42px;
+        color: $font-color;
+        visibility: hidden;
+        @include transform(scale(2));
+        @include opacity(0);
+        @include transition(none);
+      }
+
+      &.btn-activated {
+        i.after {
+          visibility: visible;
+          @include animation(dropDownFade 0.5s forwards);
+        }
+      }
+    }
+
+    /* Button 7h */
+    &.btn-ef-7h {
+      span {
+        display: inline-block;
+	    width: 100%;
+      }
+
+      i {
+        position: absolute;
+        left: 0;
+        width: 28%;
+        font-size: 130%;
+        line-height: 1.1;
+      }
+
+      &.btn-activated {
+        i {
+          @include animation(scaleUp 0.5s);
+        }
+      }
+    }
+  }
+  /* Success and error */
+
+  &.btn-activated-success,
+  &.btn-activated-error {
+    color: transparent!important;
+
+    &:after {
+      z-index: 1;
+      color: #fff;
+      left: 40%;
+    }
+  }
+
+  &.btn-activated-success {
+
+    .fa {
+      &:before {
+        content: "\f118";
+      }
+    }
+
+    &:after {
+      content: "Success!";
+      @include animation(moveUp 0.5s);
+    }
+  }
+
+  &.btn-activated-error {
+    @include animation(shake 0.5s);
+
+    .fa {
+      &:before {
+        content: "\f119";
+      }
+    }
+
+    &:after {
+      content: "Error!";
+      @include animation(scaleFromUp 0.5s);
+    }
+
+  }
+}
+
+
+// general
+
+button {
+  &:focus {
+    outline: 0 !important;;
+  }
+}
+
+.btn {
+  border-radius: 0;
+  outline: 0 !important;;
+
+  &.rounded-corners,
+  &.btn-rounded {
+    border-radius: 4px;
+
+    &.btn-lg {
+      border-radius: 6px;
+    }
+
+    &.btn-sm,
+    &.btn-xs {
+      border-radius: 3px;
+    }
+  }
+
+  &.btn-rounded-10 {
+    border-radius: 10px;
+  }
+
+  &.btn-rounded-20 {
+    border-radius: 20px;
+  }
+
+  &.btn-rounded-40 {
+    border-radius: 40px;
+  }
+
+  &.btn-rounded-50p {
+    border-radius: 50%;
+  }
+
+  &.no-border {
+    border: 0;
+  }
+
+  &.btn-icon-only {
+	font-size: 0;
+	padding: 20px 25px;
+    position: relative;
+
+    i {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 22px;
+      line-height: 42px;
+      @include backface-visibility(hidden);
+    }
+  }
+
+  &:focus,&:active {
+    outline: 0 !important;;
+  }
+
+  &.btn-cyan {
+    background-color: $cyan;
+    color: white;
+    border-color: $darken-cyan;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-cyan;
+      border-color: $darker-cyan;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-cyan;
+      border-color: $darkest-cyan;
+    }
+  }
+  &.btn-amethyst {
+    background-color: $amethyst;
+    color: white;
+    border-color: $darken-amethyst;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-amethyst;
+      border-color: $darker-amethyst;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-amethyst;
+      border-color: $darkest-amethyst;
+    }
+  }
+  &.btn-green {
+    background-color: $green;
+    color: white;
+    border-color: $darken-green;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-green;
+      border-color: $darker-green;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-green;
+      border-color: $darkest-green;
+    }
+  }
+  &.btn-orange {
+    background-color: $orange;
+    color: white;
+    border-color: $darken-orange;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-orange;
+      border-color: $darker-orange;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-orange;
+      border-color: $darkest-orange;
+    }
+  }
+  &.btn-red {
+    background-color: $red;
+    color: white;
+    border-color: $darken-red;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-red;
+      border-color: $darker-red;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-red;
+      border-color: $darkest-red;
+    }
+  }
+  &.btn-greensea {
+    background-color: $greensea;
+    color: white;
+    border-color: $darken-greensea;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-greensea;
+      border-color: $darker-greensea;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-greensea;
+      border-color: $darkest-greensea;
+    }
+  }
+  &.btn-dutch {
+    background-color: $dutch;
+    color: white;
+    border-color: $darken-dutch;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-dutch;
+      border-color: $darker-dutch;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-dutch;
+      border-color: $darkest-dutch;
+    }
+  }
+  &.btn-hotpink {
+    background-color: $hotpink;
+    color: white;
+    border-color: $darken-hotpink;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-hotpink;
+      border-color: $darker-hotpink;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-hotpink;
+      border-color: $darkest-hotpink;
+    }
+  }
+  &.btn-drank {
+    background-color: $drank;
+    color: white;
+    border-color: $darken-drank;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-drank;
+      border-color: $darker-drank;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-drank;
+      border-color: $darkest-drank;
+    }
+  }
+  &.btn-blue {
+    background-color: $blue;
+    color: white;
+    border-color: $darken-blue;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-blue;
+      border-color: $darker-blue;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-blue;
+      border-color: $darkest-blue;
+    }
+  }
+  &.btn-lightred {
+    background-color: $lightred;
+    color: white;
+    border-color: $darken-lightred;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-lightred;
+      border-color: $darker-lightred;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-lightred;
+      border-color: $darkest-lightred;
+    }
+  }
+  &.btn-slategray {
+    background-color: $slategray;
+    color: white;
+    border-color: $darken-slategray;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-slategray;
+      border-color: $darker-slategray;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-slategray;
+      border-color: $darkest-slategray;
+    }
+  }
+  &.btn-darkgray {
+    background-color: $darkgray;
+    color: white;
+    border-color: $darken-darkgray;
+
+    &:hover,&:active,&.active {
+      background-color: $darken-darkgray;
+      border-color: $darker-darkgray;
+      color: white;
+    }
+
+    &:active,&.active {
+      background-color: $darker-darkgray;
+      border-color: $darkest-darkgray;
+    }
+  }
+
+  &.btn-default {
+    color: $font-color;
+    border-color: lighten($brand-default, 40%);
+
+    &:focus {
+      background-color: white;
+      border-color: lighten($brand-default, 30%);
+    }
+
+    &:hover {
+      background-color: lighten($brand-default, 53%);
+    }
+
+    &:active,&.active {
+      background-color: lighten($brand-default, 50%);
+    }
+  }
+
+  &.btn-primary {
+    &:focus {
+      background-color: $brand-primary;
+      border-color: #357ebd;
+    }
+
+    &:hover {
+      background-color: darken($brand-primary, 10%);
+    }
+
+    &:active,&.active {
+      background-color: darken($brand-primary, 15%);
+    }
+  }
+
+  &.btn-success {
+    &:focus {
+      background-color: $brand-success;
+      border-color: #4cae4c;
+    }
+
+    &:hover {
+      background-color: darken($brand-success, 10%);
+    }
+
+    &:active,&.active {
+      background-color: darken($brand-success, 15%);
+    }
+  }
+
+  &.btn-warning {
+    &:focus {
+      background-color: $brand-warning;
+      border-color: #eea236;
+    }
+
+    &:hover {
+      background-color: darken($brand-warning, 10%);
+    }
+
+    &:active,&.active {
+      background-color: darken($brand-warning, 15%);
+    }
+  }
+
+  &.btn-danger {
+    &:focus {
+      background-color: $brand-danger;
+      border-color: #d43f3a;
+    }
+
+    &:hover {
+      background-color: darken($brand-danger, 10%);
+    }
+
+    &:active,&.active {
+      background-color: darken($brand-danger, 15%);
+    }
+  }
+
+  &.btn-info {
+    &:focus {
+      background-color: $brand-info;
+      border-color: #46b8da;
+    }
+
+    &:hover {
+      background-color: darken($brand-info, 10%);
+    }
+
+    &:active,&.active {
+      background-color: darken($brand-info, 15%);
+    }
+  }
+
+  &.btn-border {
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+
+    &:hover,&:active,&.active,&:focus {
+      background-color: transparent;
+    }
+
+    &.btn-xs,
+    &.btn-sm {
+      border-width: 1px;
+    }
+
+    &.btn-cyan {
+      color: $cyan;
+
+      &:hover,&:active,&.active {
+        color: $darker-cyan;
+      }
+    }
+    &.btn-amethyst {
+      color: $amethyst;
+
+      &:hover,&:active,&.active {
+        color: $darker-amethyst;
+      }
+    }
+    &.btn-green {
+      color: $green;
+
+      &:hover,&:active,&.active {
+        color: $darker-green;
+      }
+    }
+    &.btn-orange {
+      color: $orange;
+
+      &:hover,&:active,&.active {
+        color: $darker-orange;
+      }
+    }
+    &.btn-red {
+      color: $red;
+
+      &:hover,&:active,&.active {
+        color: $darker-red;
+      }
+    }
+    &.btn-greensea {
+      color: $greensea;
+
+      &:hover,&:active,&.active {
+        color: $darker-greensea;
+      }
+    }
+    &.btn-dutch {
+      color: $dutch;
+
+      &:hover,&:active,&.active {
+        color: $darker-dutch;
+      }
+    }
+    &.btn-hotpink {
+      color: $hotpink;
+
+      &:hover,&:active,&.active {
+        color: $darker-hotpink;
+      }
+    }
+    &.btn-drank {
+      color: $drank;
+
+      &:hover,&:active,&.active {
+        color: $darker-drank;
+      }
+    }
+    &.btn-blue {
+      color: $blue;
+
+      &:hover,&:active,&.active {
+        color: $darker-blue;
+      }
+    }
+    &.btn-lightred {
+      color: $lightred;
+
+      &:hover,&:active,&.active {
+        color: $darker-lightred;
+      }
+    }
+    &.btn-slategray {
+      color: $slategray;
+
+      &:hover,&:active,&.active {
+        color: $darker-slategray;
+      }
+    }
+    &.btn-darkgray {
+      color: $darkgray;
+
+      &:hover,&:active,&.active {
+        color: $darker-darkgray;
+      }
+    }
+    &.btn-primary {
+      color: $brand-primary;
+
+      &:hover,&:active,&.active {
+        color: darken($brand-primary, 20%);
+      }
+    }
+    &.btn-success {
+      color: $brand-success;
+
+      &:hover,&:active,&.active {
+        color: darken($brand-success, 20%);
+      }
+    }
+    &.btn-warning {
+      color: $brand-warning;
+
+      &:hover,&:active,&.active {
+        color: darken($brand-warning, 20%);
+      }
+    }
+    &.btn-danger {
+      color: $brand-danger;
+
+      &:hover,&:active,&.active {
+        color: darken($brand-danger, 20%);
+      }
+    }
+    &.btn-info {
+      color: $brand-info;
+
+      &:hover,&:active,&.active {
+        color: darken($brand-info, 20%);
+      }
+    }
+    &.btn-white {
+      color: #fff;
+      border-color: white;
+
+      &:hover,&:active,&.active {
+        background-color: $transparent-white-1;
+      }
+    }
+  }
+}
+
+.open .dropdown-toggle.btn-cyan {
+  background-color: $darken-cyan;
+  color: white;
+}
+.open .dropdown-toggle.btn-amethyst {
+  background-color: $darken-amethyst;
+  color: white;
+}
+.open .dropdown-toggle.btn-green {
+  background-color: $darken-green;
+  color: white;
+}
+.open .dropdown-toggle.btn-orange {
+  background-color: $darken-orange;
+  color: white;
+}
+.open .dropdown-toggle.btn-red {
+  background-color: $darken-red;
+  color: white;
+}
+.open .dropdown-toggle.btn-greensea {
+  background-color: $darken-greensea;
+  color: white;
+}
+.open .dropdown-toggle.btn-dutch {
+  background-color: $darken-dutch;
+  color: white;
+}
+.open .dropdown-toggle.btn-hotpink {
+  background-color: $darken-hotpink;
+  color: white;
+}
+.open .dropdown-toggle.btn-drank {
+  background-color: $darken-lightred;
+  color: white;
+}
+.open .dropdown-toggle.btn-drank {
+  background-color: $darken-lightred;
+  color: white;
+}
+.open .dropdown-toggle.btn-blue {
+  background-color: $darken-blue;
+  color: white;
+}
+.open .dropdown-toggle.btn-lightred {
+  background-color: $darken-lightred;
+  color: white;
+}
+.open .dropdown-toggle.btn-slategray {
+  background-color: $darken-slategray;
+  color: white;
+}
+.open .dropdown-toggle.btn-darkgray {
+  background-color: $darken-darkgray;
+  color: white;
+}
+
+// button groups
+.btn-group {
+  >.btn {
+    border-radius: 0;
+  }
+
+  &.btn-group-rounded {
+    >.btn {
+      border-radius: 4px;
+    }
+  }
+
+  &.btn-group-rounded-20 {
+    >.btn {
+      border-radius: 20px;
+    }
+  }
+}
+
+.btn-group-lg {
+  >.btn {
+    border-radius: 0;
+  }
+
+  &.btn-group-rounded {
+    >.btn {
+      border-radius: 6px;
+    }
+  }
+}
+
+.btn-group-sm,
+.btn-group-xs {
+  >.btn {
+    border-radius: 0;
+  }
+
+  &.btn-group-rounded {
+    >.btn {
+      border-radius: 3px;
+    }
+  }
+}
+
+.btn-group-vertical {
+  >.btn {
+    &:first-child:not(:last-child) {
+      border-radius: 0;
+    }
+  }
+}
+
+.btn-group > .btn:not(.btn-default) {
+  +.dropdown-toggle {
+    border-left: 1px solid $transparent-black-1;
+
+    &:hover,
+    &:focus,
+    &.active,
+    &:active {
+      border-left: 1px solid $transparent-black-2;
+    }
+  }
+
+  /*&:not(.dropdown-toggle){
+    &:hover,
+    &:focus,
+    &.active,
+    &:active {
+      border-right: 1px solid $transparent-black-2;
+    }
+  }*/
+}
+
+.tile-button {
+  display: block;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: $font-size-large;
+  color: $font-color;
+  opacity: .6;
+
+  &:hover,
+  &:focus {
+    color: $font-color;
+    opacity: 1;
+    text-decoration: none;
+  }
+}

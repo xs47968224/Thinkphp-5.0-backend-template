@@ -1,0 +1,97 @@
+/* printing */
+@media print {
+
+  body,
+  .custom-font {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    font-size: 14px;
+  }
+
+  [class*="col-md-"] {
+    float: left;
+    display: inline-block;
+  }
+
+  .col-md-12 {
+    width: 100%;
+  }
+  .col-md-11 {
+    width: 91.66666666666666%;
+  }
+  .col-md-10 {
+    width: 83.33333333333334%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-8 {
+    width: 66.66666666666666%;
+  }
+  .col-md-7 {
+    width: 58.333333333333336%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-5 {
+    width: 41.66666666666667%;
+  }
+  .col-md-4 {
+    width: 33.33333333333333%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-2 {
+    width: 16.666666666666664%;
+  }
+  .col-md-1 {
+    width: 8.333333333333332%;
+  }
+
+  .visible-md-block,
+  .visible-lg-block {
+    display: block!important;
+  }
+
+  #header,#sidebar,#rightbar {
+    display: none;
+  }
+
+  #content {
+    top: 0!important;
+    left: 0!important;
+    right: 0!important;
+    margin: 0!important;
+    padding: 0!important;
+
+    .pageheader,
+    .alert {
+      display: none;
+    }
+
+    .add-nav {
+      .nav-heading,
+      .nav-tabs {
+        display: none;
+      }
+    }
+
+    .price-total {
+      float: right!important;
+      width: 380px;
+    }
+
+    .page {
+      padding: 0!important;
+    }
+  }
+
+  .tile > .tile-header {
+    display: none;
+  }
+}

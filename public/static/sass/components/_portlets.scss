@@ -1,0 +1,23 @@
+.portlets.sortable {
+  min-height: 50px;
+}
+
+.ui-sortable-placeholder {
+  border: 3px dashed $transparent-black-1;
+  margin-bottom: 20px;
+  height: 100px;
+  visibility: visible!important;
+  opacity: .5;
+}
+
+
+.portlet {
+  .tile-header {
+    cursor: pointer;
+    @include transition(all .15s linear);
+
+    &:hover {
+      background-color: $transparent-black-05!important;
+    }
+  }
+}
