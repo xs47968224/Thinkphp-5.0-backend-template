@@ -8,8 +8,8 @@
 
 ---------------
 
-username: admin
-password: kevin
+ + username: admin
+ + password: kevin
 
 
 关于ThinkPHP 5.0 RC4
