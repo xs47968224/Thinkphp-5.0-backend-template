@@ -6,6 +6,11 @@
  + 3.后台权限管理
  + 4.表单字段view模板（只需在控制器中写好字段数组，view中直接include custom-field.html,参考administrator模块）
 
+---------------
+
+username: admin
+password: kevin
+
 
 关于ThinkPHP 5.0 RC4
 ===============
