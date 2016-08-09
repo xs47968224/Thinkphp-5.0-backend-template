@@ -39,7 +39,7 @@ CREATE TABLE `think_administrator` (
 -- ----------------------------
 -- Records of think_administrator
 -- ----------------------------
-INSERT INTO `think_administrator` VALUES ('1', 'Admin', 'admin', '7c99b344032cd02cb1c1ae958174fd82', '112', '15062657363', '1', '57a99128f2c90_thumb.jpg', '127.0.0.1', '1470748670', '1470777470', '1463362516', '1470748660');
+INSERT INTO `think_administrator` VALUES ('1', 'Admin', 'admin', '7c99b344032cd02cb1c1ae958174fd82', '112', '13888888888', '1', '57a99128f2c90_thumb.jpg', '127.0.0.1', '1470748670', '1470777470', '1463362516', '1470748660');
 INSERT INTO `think_administrator` VALUES ('2', 'Editor', 'editor', 'df620c97d6c8a15b672191fe11b9a886', '519', '13888888888', '1', null, '127.0.0.1', '1470748703', '1470777503', '1463363564', '1470660594');
 
 -- ----------------------------
