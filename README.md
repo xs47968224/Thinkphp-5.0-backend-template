@@ -1,10 +1,21 @@
 基于 ThinkPHP 5.0 RC4 创建快速开发模板
 ===============
+ + 版本 1.1
+ + 1.后台新增文章模块，由于管理员模块还是有点特殊性，有些代码示例不到位，所以新增一个文章模块
+ + 2.对custom-field.php进行补充及完善
+ + 3.修复了datepicker选择框错位的问题
+ + 4.TODO：ckeditor,ckfinder,这两个下个版本补充，今天七夕，陪女朋友吃晚饭~
+
  + 版本 1.0
  + 1.已完成后台模板样式
  + 2.后台管理员模块
  + 3.后台权限管理
  + 4.表单字段view模板（只需在控制器中写好字段数组，view中直接include custom-field.html,参考administrator模块）
+
+---------------
+
+ + username: admin
+ + password: kevin
 
 
 关于ThinkPHP 5.0 RC4

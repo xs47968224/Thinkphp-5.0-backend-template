@@ -48,19 +48,7 @@ CREATE TABLE `think_administrator` (
 
 INSERT INTO `think_administrator` (`id`, `nickname`, `username`, `password`, `salt`, `mobile`, `status`, `avatar`, `last_login_ip`, `last_login_time`, `expire_time`, `create_time`, `update_time`) VALUES
 (1, 'Admin', 'admin', '7c99b344032cd02cb1c1ae958174fd82', '112', '13888888888', 1, NULL, '127.0.0.1', 1469530998, 1469534598, 1463362516, 1469511520),
-(2, 'Editor', 'editor', 'df620c97d6c8a15b672191fe11b9a886', '519', '13888888888', 1, NULL, '127.0.0.1', 1469508726, 1469513500, 1463363564, 1469513500),
-(3, '刘晨', 'liuchen', 'bc9ab605e3046a23a80a679612a6b77b', '321', '15088888888', 1, '57971ff092983_thumb.jpg', NULL, 1469509428, 1469511172, 1469164654, 1469521904),
-(6, '流年2', 'liunian2', '111111', '111', '13888888888', 1, NULL, NULL, 1469509554, 1469531035, 1469165729, 1469531035),
-(7, '流年3', 'liunian3', '111111', '111', '13888888888', 1, NULL, NULL, NULL, 1469511483, 1469166592, 1469511483),
-(8, '刘晨123', 'liuchen123', '386933bc9fc02c9cd6a5396d25afaaf0', '322', '13888888888', 1, NULL, NULL, NULL, NULL, 1469166690, 1469511765),
-(9, 'Kevin', 'root', '', '0', '13888888888', 1, NULL, NULL, NULL, NULL, 1469171170, 1469444188),
-(10, '123123123', '13123123', '123123', '123', '13888888888', 1, NULL, NULL, NULL, NULL, 1469495815, 1469495815),
-(20, '3213123', '321123123', '4297f44b13955235245b2497399d7a93', '123', '13888888888', 1, NULL, NULL, NULL, NULL, 1469501012, 1469501498),
-(14, '123321', 'r1r32r', '5f4dcc3b5aa765d61d8327deb882cf99', '222', '13888888888', -1, NULL, NULL, NULL, NULL, 1469500375, 1469513370),
-(15, '3213123', '3212313', 'f668bd04d1a6cfc29378e24829cddba9', '333', '13888888888', 1, NULL, NULL, NULL, NULL, 1469496441, 1469501288),
-(18, 'd123', 'sdfasdfasdf', '4297f44b13955235245b2497399d7a93', '323', '13888888888', 1, NULL, NULL, NULL, NULL, 1469496682, 1469496682),
-(19, 'testtest1', 'testtest1', '4297f44b13955235245b2497399d7a93', '123', '13888888888', 1, NULL, NULL, NULL, NULL, 1469497668, 1469501304),
-(21, 'test123123', 'test123123', '912b7bc95fb9e6885a4685746433f39a', '123', '15088888888', 1, '579720776d0c1_thumb.jpg', NULL, NULL, NULL, 1469522039, 1469522039);
+(2, 'Editor', 'editor', '7c99b344032cd02cb1c1ae958174fd82', '112', '13888888888', 1, NULL, '127.0.0.1', 1469508726, 1469513500, 1463363564, 1469513500),
 
 --
 -- Indexes for dumped tables
@@ -80,7 +68,27 @@ ALTER TABLE `think_administrator`
 -- 使用表AUTO_INCREMENT `think_administrator`
 --
 ALTER TABLE `think_administrator`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+DROP TABLE IF EXISTS `think_posts`;
+CREATE TABLE `think_posts` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `post_content` longtext,
+  `post_title` text NOT NULL,
+  `post_excerpt` text,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
+  `comment_status` varchar(20) NOT NULL DEFAULT 'open',
+  `post_password` varchar(20) DEFAULT '',
+  `comment_count` bigint(20) DEFAULT '0',
+  `feature_image` varchar(255) DEFAULT NULL,
+  `create_time` int(11) DEFAULT NULL,
+  `update_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `type_status_date` (`status`,`create_time`),
+  KEY `post_author` (`post_author`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

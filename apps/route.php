@@ -29,6 +29,11 @@ return [
     'admin/administrator/delete_image/:id'       => 'admin/administrator/delete_image',
     'admin/administrator/update_expire_time/:id' => 'admin/administrator/update_expire_time',
 
+    'admin/posts/:id'                            => 'admin/posts/read',
+    'admin/posts/update/:id'                     => 'admin/posts/update',
+    'admin/posts/delete/:id'                     => 'admin/posts/delete',
+    'admin/posts/delete_image/:id'               => 'admin/posts/delete_image',
+
 
 
 ];

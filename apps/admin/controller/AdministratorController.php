@@ -23,7 +23,7 @@ class AdministratorController extends AdminAuth
      */
     public function index()
     {
-        $list =  Administrator::where('status','>=','0')->order('id', 'ASC')->paginate(10);
+        $list =  Administrator::where('status','>=','0')->order('id', 'ASC')->paginate();
 
         $this->assign('data',$this->data);
         $this->assign('list',$list);
@@ -45,6 +45,12 @@ class AdministratorController extends AdminAuth
 			'avatar'   => array('type' => 'file','label'     => '头像'),
 			'status'   => array('type' => 'radio', 'label' => '状态','default'=> array(-1 => '删除', 0 => '禁用', 1 => '正常', 2 => '待审核')),
         );
+
+        //默认值设置
+        $item['status'] = '正常';
+        $item['salt'] = rand(100,999);
+
+        $this->assign('item',$item);
         $this->assign('data',$this->data);
         return view();
     }
@@ -74,6 +80,9 @@ class AdministratorController extends AdminAuth
         }
 
         $data['avatar'] = $this->upload();
+        if(!$data['avatar']){
+            unset($data['avatar']);
+        }
 
         $data['password'] =  (isset($data['salt']) && $data['salt']) ? md5($data['password'].$data['salt']) : md5($data['password']);
         $data['create_time'] = time();
@@ -105,9 +114,12 @@ class AdministratorController extends AdminAuth
 			'avatar'   => array('type' => 'file','label'     => '头像'),
 			'status'   => array('type' => 'radio', 'label' => '状态','default'=> array(-1 => '删除', 0 => '禁用', 1 => '正常', 2 => '待审核')),
         );
+
+        //默认值设置
         $item = Administrator::get($id);
-        $this->assign('data',$this->data);
+
         $this->assign('item',$item);
+        $this->assign('data',$this->data);
         return view();
     }
 
