@@ -1,0 +1,99 @@
+.page.page-mail {
+
+  //mail navigation
+  #mail-nav {
+    #mail-folders,
+    #mail-labels {
+      >li{
+        >a {
+          color: $font-color;
+
+          .badge {
+            margin-top: 2px;
+          }
+
+          &:hover {
+            background-color: white;
+          }
+        }
+
+        &.active {
+          >a {
+            color: white;
+
+            &:hover {
+              background-color: $darken-cyan;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .note-editable {
+    background-color: white;
+  }
+
+  //mails list
+
+  #mails-list {
+    margin-bottom: 0;
+    >li {
+      border: 0;
+      border-left: 3px solid;
+      margin-bottom: 1px;
+      padding: 20px;
+
+      .thumb>div {
+        height: 40px;
+        background-color: $brand-default;
+        color: white;
+        text-transform: uppercase;
+        font-size: 26px;
+        font-family: $font-dosis;
+        padding: 1px 0;
+        text-align: center;
+      }
+
+      .media-heading>a {
+        font-weight: $font-weight-bold;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .controls {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: top;
+        text-align: center;
+        margin-top: -2px;
+
+        .favourite {
+          font-size: 16px;
+
+          &:hover,
+          &:focus:hover {
+            color: $lighter-default;
+          }
+
+          &:focus {
+            color: $orange;
+          }
+
+          &.active {
+            >i:before {
+              content: "\f005";
+            }
+          }
+        }
+
+        .mail-select {
+          width: 20px;
+        }
+      }
+    }
+  }
+
+}

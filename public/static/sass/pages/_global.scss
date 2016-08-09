@@ -1,0 +1,15 @@
+.page {
+  padding: 20px;
+}
+.page-full {
+  height: 100%;
+  padding: 0;
+}
+.page-core {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 60px 10px;
+  background-color: $slategray;
+  overflow: auto;
+}

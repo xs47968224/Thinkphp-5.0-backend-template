@@ -1,0 +1,132 @@
+.page-search-results {
+  .search-bar {
+    margin: 10px 0;
+  }
+
+  .search-results {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+
+    > .search-result {
+      padding: 15px 0;
+      border-bottom: 1px solid $transparent-black-05;
+
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .cover {
+        padding: 20px;
+        background-color: white;
+        @include transition(all .25s linear);
+        @include border-radius(2px);
+
+        h4 {
+          padding: 0;
+          margin: 0 0 10px 0;
+          font-weight: $font-weight-bold;
+          font-family: $font-dosis;
+
+          a {
+            color: darken($font-color, 15%);
+
+            &:hover {
+              text-decoration: none;
+              color: $blue;
+            }
+          }
+        }
+
+        > p {
+          color: lighten($font-color, 20%);
+        }
+
+        > a {
+          font-size: $font-size-small;
+          color: $blue;
+
+          &:hover {
+            color: lighten($blue, 10%);
+          }
+        }
+      }
+
+      &:hover {
+        .cover {
+          background-color: #fafafa;
+        }
+      }
+
+      .media {
+        img {
+          width: 130px;
+          max-height: 85px;
+          margin-right: 10px;
+
+          &.img-circle {
+            width: 85px;
+          }
+        }
+
+        > a {
+          > i {
+            width: 130px;
+            background-color: $transparent-black-05;
+            margin-right: 10px;
+            line-height: 85px;
+            text-align: center;
+            color: $font-color;
+            font-size: 3.5em;
+            @include border-radius(2px);
+          }
+
+          &:hover {
+            i {
+              color: $blue;
+            }
+          }
+        }
+
+        .media-body {
+          small {
+            font-size: $font-size-mini;
+            color: lighten($font-color, 20%);
+          }
+        }
+      }
+    }
+  }
+
+  .refine-results {
+    .slider {
+      width: 100%;
+    }
+  }
+}
+
+.search-filters {
+
+  >a {
+    padding: 5px 15px;
+    border: 1px solid $font-color;
+    @include border-radius(4px);
+    font-size: $font-size-small;
+    margin: 0 2px;
+    color: $font-color;
+    line-height: 36px;
+
+    &:hover {
+      border: 1px solid $blue;
+      color: $blue;
+      text-decoration: none;
+    }
+
+    &.active {
+      background-color: $blue;
+      border-color: transparent;
+      color: white;
+    }
+  }
+}

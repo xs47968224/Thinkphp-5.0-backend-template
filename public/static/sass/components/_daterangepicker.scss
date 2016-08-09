@@ -1,0 +1,28 @@
+.daterangepicker {
+  .ranges {
+    li {
+      font-size: $font-size-small;
+      border-radius: 0;
+    }
+
+    .daterangepicker_start_input,
+    .daterangepicker_end_input {
+      label {
+        color: $font-color;
+        text-transform: none;
+      }
+    }
+
+    .input-mini {
+      border-radius: 0;
+      color: $font-color;
+      @include transition(all .5s ease);
+
+      &:focus {
+        outline: 0;
+        border: 1px solid darken(#ccc, 30%);
+      }
+    }
+
+  }
+}

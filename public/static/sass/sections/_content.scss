@@ -1,0 +1,115 @@
+#content {
+  padding-top: 45px;
+  width: auto;
+  //overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: -blackberry-touch;
+  @include transition(right .25s $ease-in-circ, padding-right .25s $ease-in-circ);
+
+  >div[ui-view] {
+    height: 100%;
+  }
+
+  &.ng-enter .page {
+    @include animation(littleFadeInUp .5s ease);
+    @include animation-fill-mode(both);
+    @include backface-visibility(hidden);
+  }
+
+  &.ng-leave .page {
+    @include opacity(0);
+  }
+
+  >[ui-view].ng-enter, >[ui-view].ng-leave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    @include transition(all .5s ease-in-out);
+  }
+
+  >[ui-view].ng-enter {
+    @include opacity(0);
+    @include transform(scale3d(0.5, 0.5, 0.5));
+  }
+
+  >[ui-view].ng-enter-active {
+    @include opacity(1);
+    @include transform(scale3d(1, 1, 1));
+  }
+
+  >[ui-view].ng-leave {
+    @include opacity(1);
+    @include transform(translate3d(0, 0, 0));
+  }
+
+  >[ui-view].ng-leave-active {
+    @include opacity(0);
+    @include transform(translate3d(100px, 100px, 0));
+  }
+
+}
+
+.appWrapper.header-fixed.aside-fixed {
+  #content {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    left: 250px;
+    padding-left: 0;
+    padding-top: 0;
+    z-index: 1;
+  }
+}
+
+
+.appWrapper.header-static {
+  #content {
+    padding-left: 250px;
+    padding-top: 0;
+  }
+}
+
+.appWrapper.aside-static {
+  #content {
+    padding-left: 250px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .appWrapper {
+    &.header-fixed.aside-fixed {
+      &:not(.sidebar-sm):not(.sidebar-xs) {
+        #content {
+          left: 80px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .appWrapper {
+    &.header-fixed.aside-fixed {
+      #content {
+        top: 90px;
+      }
+      &:not(.sidebar-sm):not(.sidebar-xs) {
+        #content {
+          left: 40px;
+        }
+      }
+    }
+    &.aside-static {
+      #content {
+        padding-top: 90px;
+      }
+    }
+    &.header-static.aside-static {
+      #content {
+        padding-top: 0;
+      }
+    }
+  }
+}

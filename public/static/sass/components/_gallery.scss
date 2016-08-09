@@ -1,0 +1,151 @@
+.mix-filter,
+.mix-controls {
+  list-style: none;
+  margin: 15px 0;
+  padding: 0;
+
+  li {
+    cursor: pointer;
+    padding: 6px 15px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+    background: $bright-default;
+    display: inline-block;
+    font-size: $font-size-small;
+
+    &:hover:not(.disabled),
+    &.active:not(.disabled) {
+      color: #fff;
+      background: $greensea;
+    }
+  }
+}
+
+.mix-controls {
+  li {
+    &.select-all {
+      background: none;
+      padding-left: 0;
+
+      .checkbox {
+        min-height: 17px;
+      }
+
+      &:hover {
+        color: $darker-default;
+        background: none;
+      }
+    }
+    &.disabled,
+    &.disabled a{
+      opacity: .5;
+      cursor: not-allowed;
+    }
+    a {
+      color: $font-color;
+      i {
+        margin-right: 5px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:hover:not(.disabled) {
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.mix-grid {
+
+  .mix {
+    position: relative;
+    display: none;
+
+    .img-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .img-details {
+      padding: 0;
+      color: white;
+      width: 0;
+      height: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -10px;
+      text-align: center;
+      position: absolute;
+      background: transparent;
+      @include transition(all .5s ease);
+      overflow: hidden;
+
+      h4 {
+        margin-top: 30px;
+      }
+
+      .img-controls {
+        margin-top: 15px;
+
+        .img-select {
+          i:last-child {
+            display: none;
+          }
+        }
+
+        >a {
+          color: white;
+          display: inline-block;
+          cursor: pointer;
+          margin-top: 10px;
+          padding: 10px 15px;
+          background: black;
+          border-radius: 50%;
+          width: 42px;
+          height: 42px;
+          line-height: 22px;
+          margin-right: 5px;
+
+          &:hover {
+            background-color: $brand-info;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .img-container:hover,
+    &.selected {
+      .img-details {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        background: $transparent-black-6;
+        @include transition(all .5s ease);
+      }
+    }
+
+    &.selected {
+      .img-controls .img-select {
+        background: $brand-info;
+        i:last-child {
+          display: inline-block;
+        }
+        i:first-child {
+          display: none;
+        };
+      }
+    }
+  }
+}
+
+.mfp-arrow-right:before,
+.mfp-arrow-left:before {
+  display: none!important;
+}

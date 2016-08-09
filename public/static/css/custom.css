@@ -1,0 +1,31 @@
+.pagination-flip.form-inline {
+    margin-top: 20px;
+}
+.insure_name{
+  font-size: 20px;
+  font-weight: bold !important;
+}
+.insure_name input[type="checkbox"]{
+  margin-top: 10px;
+}
+#order_goods_layer {
+    max-width: 800px;
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    z-index: 999;
+    box-shadow: 0 0 5px #ccc;
+}
+.close_button{
+	position: absolute;
+	top: -30px;
+	right: 0;
+	height: 30px;
+	width: 30px;
+	vertical-align: middle;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	cursor: pointer;
+}

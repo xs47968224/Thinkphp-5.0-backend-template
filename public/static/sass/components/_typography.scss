@@ -1,0 +1,931 @@
+.text-muted {
+  color: $font-color-light;
+}
+
+.custom-font {
+  font-family: $font-dosis;
+}
+
+.filled {
+  padding: 10px;
+  color: white;
+}
+
+.text-thin {
+  font-weight: $font-weight-light;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-strong {
+  font-weight: $font-weight-bold;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.text-lowercase {
+  text-transform: lowercase!important;
+}
+
+.text-active {
+  display: none;
+}
+
+.active {
+  >.text-active {
+    display: inline-block;
+  }
+  >.text-inactive {
+    display: none;
+  }
+}
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+  &.underline {
+    border-bottom: 1px solid $font-color-light;
+    padding-bottom: 5px;
+  }
+}
+
+// address
+
+address {
+  &.filled {
+    strong {
+      display: block;
+      margin: -10px;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    i {
+      font-size: 80px;
+      margin-top: -50px;
+      @include opacity(.05);
+    }
+
+    &.append {
+      margin-top: -20px;
+    }
+  }
+}
+
+// description lists
+
+dl {
+  &.filled {
+    padding: 0;
+
+    dt {
+      font-family: $font-dosis;
+    }
+    dt,
+    dd {
+      padding: 5px 10px;
+    }
+  }
+}
+
+// blockquotes
+
+blockquote {
+  &.filled {
+    min-height: 60px;
+    padding: 10px;
+    border-left: 5px solid;
+    border-color: $transparent-black-3;
+
+    i[class*='fa-quote-'] {
+      font-size: 46px;
+      margin: 0 10px 10px 0;
+      color: $transparent-black-1;
+    }
+
+    .fa.pull-right {
+      margin-left: .3em;
+    }
+
+    small {
+      color: $transparent-black-3;
+    }
+
+    &.text-right {
+      border-left-width: 0;
+      border-right: 5px solid $transparent-black-3;
+    }
+  }
+
+  p {
+    line-height: 1.6em;
+  }
+}
+
+// note
+.note {
+  display: inline-block;
+  padding: 2px 5px;
+  background-color: $transparent-black-1;
+  color: $font-color-light;
+  font-family: $font-dosis;
+  font-size: $font-size-small;
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
+  margin-top: 5px;
+}
+
+// link effects
+
+.example {
+  .link-effect {
+    font-family: $font-dosis;
+    margin: 15px 25px;
+    text-transform: uppercase;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-large;
+    letter-spacing: 1px;
+  }
+}
+
+.link-effect {
+  font-family: $font-dosis;
+  margin: 15px 25px;
+  text-transform: uppercase;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-large;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+  vertical-align: middle;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  /* Effect 1: Brackets */
+  &.link-effect-1 {
+    &::before,
+    &::after {
+      display: inline-block;
+      @include opacity(0);
+      @include transition(transform 0.3s, opacity 0.2s);
+    }
+
+    &::before {
+      margin-right: 10px;
+      content: '[';
+      @include transform(translateX(20px));
+    }
+
+    &::after {
+      margin-left: 10px;
+      content: ']';
+      @include transform(translateX(-20px));
+    }
+
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        @include opacity(1);
+        @include transform(translateX(0));
+      }
+    }
+
+  }
+
+  /* Effect 2: 3D rolling links, idea from http://hakim.se/thoughts/rolling-links */
+  &.link-effect-2 {
+    color: white;
+    line-height: 1.8em;
+    @include perspective(1000px);
+
+    span {
+      position: relative;
+      display: inline-block;
+      padding: 0 10px;
+      background: $brand-primary;
+      @include transition(transform 0.3s);
+      @include transform-origin(50% 0);
+      @include transform-style(preserve-3d);
+
+      &::before {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: darken($brand-primary, 20%);
+        content: attr(data-hover);
+        padding: 0 10px;
+        @include transition(background 0.3s);
+        @include transform(rotateX(-90deg));
+        @include transform-origin(50% 0);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      span {
+        @include transform(rotateX(90deg) translateY(-22px));
+
+        &::before {
+          background-color: $brand-primary;
+        }
+      }
+    }
+  }
+
+  /* Effect 3: bottom line slides/fades in */
+  &.link-effect-3 {
+      padding: 4px 0;
+
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: transparentize($brand-primary, .85);
+      content: '';
+      @include opacity(0);
+      @include transition(opacity 0.3s, transform 0.3s);
+      @include transform(translateY(10px));
+    }
+
+    &:hover,&:focus {
+      &::after {
+        @include opacity(1);
+        @include transform(translateY(0px));
+      }
+    }
+  }
+
+  /* Effect 4: bottom border enlarge */
+  &.link-effect-4 {
+    padding: 0 0 4px;
+
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: transparentize($brand-primary, .85);
+      content: '';
+      @include opacity(0);
+      @include transition(height 0.3s, opacity 0.3s, transform 0.3s);
+      @include transform(translateY(-10px));
+    }
+
+    &:hover,&:focus {
+      &::after {
+        height: 5px;
+        @include opacity(1);
+        @include transform(translateY(0px));
+      }
+    }
+  }
+
+  /* Effect 5: same word slide in */
+  &.link-effect-5 {
+    overflow: hidden;
+    padding: 0 4px;
+
+    span {
+      position: relative;
+      display: inline-block;
+      @include transition(transform 0.3s);
+
+      &::before {
+        position: absolute;
+        top: 100%;
+        content: attr(data-hover);
+        font-weight: $font-weight-bold;
+        @include transform(translate3d(0,0,0));
+      }
+    }
+
+    &:hover,&:focus {
+      span {
+        @include transform(translateY(-100%));
+      }
+    }
+  }
+
+  /* Effect 6: same word slide in and border bottom */
+  &.link-effect-6 {
+    margin: 0 10px;
+    padding: 5px 10px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $brand-primary;
+      content: '';
+      @include transition(top .3s);
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 2px;
+      background: $brand-primary;
+      content: '';
+      @include transition(height .3s);
+    }
+
+    &:hover {
+      &::before {
+        top: 100%;
+        @include opacity(1);
+      }
+      &::after {
+        height: 100%;
+      }
+    }
+  }
+
+  /* Effect 7: second border slides up */
+  &.link-effect-7 {
+    padding: 6px 5px 5px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $brand-primary;
+      content: '';
+      @include transition(transform 0.3s);
+      @include transform(scale(0.85));
+    }
+
+    &::after {
+      @include opacity(0);
+      @include transition(top 0.3s, opacity 0.3s, transform 0.3s);
+    }
+
+    &:hover,&:focus {
+      &::before,
+      &::after {
+        @include transform(scale(1));
+      }
+
+      &::after {
+        top: 0%;
+        @include opacity(1);
+      }
+    }
+  }
+
+  /* Effect 8: border slight translate */
+  &.link-effect-8 {
+      padding: 5px 10px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $darkgray;
+      content: '';
+      @include transition(transform 0.3s, opacity 0.3s);
+    }
+
+    &::after {
+      border-color: $brand-primary;
+      @include opacity(0);
+      @include transform(translateY(-7px) translateX(6px));
+    }
+
+    &:hover,&:focus {
+      &::before {
+        @include opacity(1);
+        @include transform(translateY(5) translateX(-5px));
+      }
+      &::after {
+        @include opacity(1);
+        @include transform(translateY(0) translateX(0));
+      }
+    }
+  }
+
+  /* Effect 9: second text and borders */
+  &.link-effect-9 {
+    margin: 0 20px;
+    padding: 8px 10px;
+    text-align: center;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $brand-primary;
+      content: '';
+      @include opacity(.2);
+      @include transition(opacity 0.3s, height 0.3s);
+    }
+
+    &::after {
+      top: 100%;
+      @include opacity(0);
+      @include transition(transform 0.3s, opacity 0.3s);
+      @include transform(translateY(-10px));
+    }
+
+    span {
+      &:first-child {
+        z-index: 2;
+        display: block;
+      }
+      &:last-child {
+        z-index: 1;
+        display: block;
+        padding: 2px 0 0 0;
+        color: $transparent-black-4;
+        text-shadow: none;
+        text-transform: none;
+        font-style: italic;
+        font-size: $font-size-mini;
+        font-family: Georgia, serif;
+        opacity: 0;
+        @include transition(transform 0.3s, opacity 0.3s);
+        @include transform(translateY(-100%));
+      }
+    }
+
+    &:hover,&:focus {
+      &::before {
+        height: 6px;
+      }
+
+      &::before,
+      &::after {
+        @include opacity(1);
+        @include transform(translateY(0));
+      }
+
+      span:last-child {
+        @include opacity(1);
+        @include transform(translateY(0));
+      }
+    }
+  }
+
+  /* Effect 10: reveal, push out */
+  &.link-effect-10  {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 8px;
+
+    span {
+      display: block;
+      padding: 5px 10px;
+      background: lighten($brand-primary, 35%);
+      @include transition(transform 0.3s);
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      padding: 5px 10px;
+      width: 100%;
+      height: 100%;
+      background: $brand-primary;
+      color: white;
+      content: attr(data-hover);
+      @include transition(transform 0.3s);
+      @include transform(translateX(-25%));
+    }
+
+    &:hover,&:focus {
+      span {
+        @include transform(translateX(100%));
+      }
+      &::before {
+        @include transform(translateX(0));
+      }
+    }
+  }
+
+  /* Effect 11: text fill based on Lea Verou's animation http://dabblet.com/gist/6046779 */
+  &.link-effect-11 {
+    padding: 5px 0;
+    border-top: 2px solid $transparent-black-2;
+    color: $transparent-black-4;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      padding: 5px 0;
+      max-width: 0;
+      border-bottom: 2px solid $brand-primary;
+      color: $brand-primary;
+      content: attr(data-hover);
+      @include transition(max-width 0.5s);
+    }
+
+    &:hover,&:focus {
+      &::before {
+        max-width: 100%;
+      }
+    }
+  }
+
+  /* Effect 12: circle */
+  &.link-effect-12 {
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70px;
+      height: 70px;
+      border: 2px solid $transparent-black-1;
+      border-radius: 50%;
+      content: '';
+      @include opacity(0);
+      @include transition(transform 0.3s, opacity 0.3s);
+      @include transform(translateX(-50%) translateY(-50%) scale(0.2));
+    }
+
+    &:after {
+      width: 60px;
+      height: 60px;
+      border-width: 4px;
+      @include transform(translateX(-50%) translateY(-50%) scale(0.8));
+    }
+
+    &:hover,&:focus {
+      &::before,
+      &::after {
+        @include opacity(1);
+        @include transform(translateX(-50%) translateY(-50%) scale(1));
+      }
+    }
+  }
+
+  /* Effect 13: three circles */
+  &.link-effect-13 {
+    @include transition(color 0.3s);
+
+    &::before {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      color: transparent;
+      content: '•';
+      text-shadow: 0 0 transparent;
+      font-size: 1.2em;
+      @include transition(text-shadow 0.3s, color 0.3s);
+      @include transform(translateX(-50%));
+      pointer-events: none;
+    }
+
+    &:hover,&:focus {
+      &::before {
+        color: $brand-default;
+        text-shadow: 10px 0 $brand-default, -10px 0 $brand-default;
+      }
+    }
+  }
+
+  /* Effect 14: border switch */
+  &.link-effect-14 {
+    padding: 0 10px;
+    height: 30px;
+	line-height: 30px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background: $brand-primary;
+      content: '';
+      @include opacity(.2);
+      @include transition(all 0.3s);
+      pointer-events: none;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      @include transform(rotate(90deg));
+      @include transform-origin(0 0);
+    }
+
+    &::after {
+      right: 0;
+      bottom: 0;
+      @include transform(rotate(90deg));
+      @include transform-origin(100% 0);
+    }
+
+    &:hover,&:focus {
+      &::before,
+      &::after {
+        @include opacity(1);
+      }
+
+      &::before {
+        left: 50%;
+        @include transform(rotate(0deg) translateX(-50%));
+      }
+
+      &::after {
+        right: 50%;
+        @include transform(rotate(0deg) translateX(50%));
+      }
+    }
+  }
+
+  /* Effect 15: scale down, reveal */
+  &.link-effect-15 {
+    color: $transparent-black-2;
+    font-weight: $font-weight-bold;
+
+    &::before {
+      color: $brand-primary;
+      content: attr(data-hover);
+      position: absolute;
+      @include transition(transform 0.3s, opacity 0.3s);
+    }
+
+    &:hover,&:focus {
+      &::before {
+        @include transform(scale(.9));
+        @include opacity(0);
+      }
+    }
+  }
+
+  /* Effect 16: fall down */
+  &.link-effect-16 {
+    color: $transparent-black-4;
+
+    &::before {
+      color: $brand-primary;
+      content: attr(data-hover);
+      position: absolute;
+      @include opacity(0);
+      @include transform(scale(1.1) translateX(10px) translateY(-10px) rotate(4deg));
+      @include transition(transform 0.3s, opacity 0.3s);
+      pointer-events: none;
+    }
+
+    &:hover,&:focus {
+      &::before {
+        @include transform(scale(1) translateX(0px) translateY(0px) rotate(0deg));
+        @include opacity(1);
+      }
+    }
+  }
+
+  /* Effect 17: move up fade out, push border */
+  &.link-effect-17 {
+    color: $transparent-black-4;
+    padding: 10px 0;
+
+    &::before {
+      color: $brand-primary;
+      content: attr(data-hover);
+      position: absolute;
+      @include transition(transform 0.3s, opacity 0.3s);
+      pointer-events: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: $brand-default;
+      @include opacity(0);
+      @include transform(translateY(5px));
+      @include transition(transform 0.3s, opacity 0.3s);
+      pointer-events: none;
+    }
+
+    &:hover,&:focus {
+      &::before {
+        @include opacity(0);
+        @include transform(translateY(-2px));
+      }
+      &::after {
+        @include opacity(1);
+        @include transform(translateY(0));
+      }
+    }
+  }
+
+  /* Effect 18: cross */
+  &.link-effect-18 {
+    position: relative;
+    z-index: 1;
+    padding: 0 5px;
+    color: $transparent-black-2;
+    font-weight: $font-weight-bold;
+    @include transition(color 0.3s);
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 50%;
+      height: 2px;
+      margin-top: -1px;
+      background: $transparent-black-2;
+      content: '';
+      z-index: -1;
+      @include transition(transform 0.3s, opacity 0.3s);
+      pointer-events: none;
+    }
+
+    &::before {
+      @include transform(translateY(-20px));
+    }
+    &::after {
+      @include transform(translateY(20px));
+    }
+
+    &:hover,&:focus {
+      color: $brand-primary;
+
+      &::before,
+      &::after {
+        @include opacity(.7);
+        background: $transparent-black-1;
+        width: 100%;
+      }
+
+      &::before {
+        @include transform(rotate(45deg));
+      }
+
+      &::after {
+        @include transform(rotate(-45deg));
+      }
+    }
+  }
+
+  /* Effect 19: 3D side */
+  &.link-effect-19 {
+    line-height: 1.8em;
+    margin: 15px;
+    @include perspective(800px);
+    color: white;
+
+    span {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      padding: 0 15px;
+      background: $brand-primary;
+      @include transition(transform 0.4s, background 0.4s);
+      @include transform-style(preserve-3d);
+      @include transform-origin(50% 50% -100px);
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        padding: 0 15px;
+        background: darken($brand-primary, 20%);
+        content: attr(data-hover);
+        @include transition(background 0.4s);
+        @include transform(rotateY(90deg));
+        @include transform-origin(0 50%);
+        pointer-events: none;
+      }
+    }
+
+    &:hover,&:focus {
+      span {
+        background: darken($brand-primary, 20%);
+        @include transform(rotateY(-90deg));
+
+        &::before {
+          background: $brand-primary;
+        }
+      }
+    }
+  }
+
+  /* Effect 20: 3D side */
+  &.link-effect-20 {
+    line-height: 1.8em;
+    @include perspective(800px);
+
+    span {
+      position: relative;
+      display: inline-block;
+      padding: 3px 15px 0;
+      background: lighten($brand-primary, 35%);
+      box-shadow: inset 0 3px lighten($brand-primary, 20%);
+      @include transition(background 0.6s);
+      @include transform-style(preserve-3d);
+      @include transform-origin(0% 50%);
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 3px 15px 0;
+        background: $brand-primary;
+        color: #fff;
+        content: attr(data-hover);
+        @include transition(transform 0.6s);
+        @include transform(rotateX(270deg));
+        @include transform-origin(0 0);
+        pointer-events: none;
+      }
+    }
+
+    &:hover,&:focus {
+      span {
+        background: lighten($brand-primary, 20%);;
+
+        &::before {
+          @include transform(rotateX(10deg));
+        }
+      }
+    }
+  }
+
+  /* Effect 21: borders slight translate */
+  &.link-effect-21 {
+    padding: 10px;
+    color: $transparent-black-2;
+    font-weight: $font-weight-bold;
+    @include transition(color 0.3s);
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $brand-primary;
+      content: '';
+      @include opacity(0);
+      @include transition(opacity 0.3s, transform 0.3s);
+      @include transform(translateY(-10px));
+    }
+
+    &::before {
+      top: 0;
+      @include transform(translateY(-10px));
+    }
+
+    &::after {
+      bottom: 0;
+      @include transform(translateY(10px));
+    }
+
+    &:hover,&:focus {
+      color: $brand-primary;
+
+      &::before,
+      &::after {
+        @include opacity(1);
+        @include transform(translateY(0));
+      }
+    }
+  }
+}

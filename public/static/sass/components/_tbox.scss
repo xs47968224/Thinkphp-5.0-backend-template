@@ -1,0 +1,38 @@
+.tbox {
+  display: table;
+  width: 100%;
+  height: 100%;
+  border-spacing: 0;
+  table-layout: fixed;
+
+  >.tcol {
+    display: table-cell;
+    float: none;
+    height: 100%;
+    vertical-align: top;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .tbox-sm {
+    display: block;
+
+    >.tcol {
+      display: block;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tbox-xs {
+    display: block;
+
+    >.tcol {
+      display: block;
+      width: auto;
+      height: auto;
+    }
+  }
+}

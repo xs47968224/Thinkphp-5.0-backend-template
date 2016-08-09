@@ -1,0 +1,45 @@
+.jqstooltip {
+  @include box-sizing(content-box);
+}
+.flotTip {
+  z-index: 100;
+  padding: 4px 10px;
+  font-size: $font-size-small;
+  color: #fff;
+  background-color: $transparent-black-8;
+  border: 0;
+  border-radius: 2px;
+}
+.legendColorBox>div {
+  margin: 3px 5px;
+  border: none!important;
+  >div {
+    border-radius: 10px;
+  }
+}
+.easypiechart {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin: 5px auto;
+
+  .pie-percent {
+    display: inline-block;
+    line-height: 100%;
+    font-size: 40px;
+    font-weight: 300;
+    color: $font-color-light;
+
+    &:after {
+      content: '%';
+      margin-left: 0.1em;
+      font-size: .6em;
+    }
+  }
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

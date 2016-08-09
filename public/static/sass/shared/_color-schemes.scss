@@ -1,0 +1,618 @@
+//default colors
+$header-default: $header-bg;
+$sidebar-default: $sidebar-bg;
+$active-default: $active-el;
+
+//define colors
+$scheme-black : #1c2b36;
+$scheme-drank: $header-bg;
+$scheme-greensea: $greensea;
+$scheme-cyan: $cyan;
+$scheme-lightred: $lightred;
+$scheme-light: #fff;
+$scheme-light-color: $transparent-white-8;
+
+.color-schemes {
+  a.scheme-black {
+    background-color: $scheme-black;
+  }
+  a.scheme-drank {
+    background-color: $scheme-drank;
+  }
+  a.scheme-greensea {
+    background-color: $scheme-greensea;
+  }
+  a.scheme-cyan {
+    background-color: $scheme-cyan;
+  }
+  a.scheme-lightred {
+    background-color: $scheme-lightred;
+  }
+  a.scheme-light {
+    background-color: $scheme-light;
+  }
+}
+
+.sidebar-sm,
+.sidebar-xs {
+  #sidebar.scheme-black,
+  #sidebar.scheme-drank,
+  #sidebar.scheme-greensea,
+  #sidebar.scheme-cyan,
+  #sidebar.scheme-lightred,
+  #sidebar.scheme-light {
+    background-color: transparent!important;
+  }
+}
+
+//scheme-black
+
+#header.scheme-black {
+  background-color: $scheme-black;
+}
+
+#header .branding.scheme-black,
+#sidebar.scheme-black,
+#sidebar.scheme-black #navigation,
+#sidebar.scheme-black #sidebar-wrap:before,
+#header.scheme-black li.toggle-right-sidebar > a,
+.appWrapper.scheme-black .page-breadcrumb > li:first-child {
+  background-color: darken($scheme-black, 5%)!important;
+}
+
+.appWrapper.black-scheme-color #navigation > li.active > a,
+.appWrapper.black-scheme-color #loading-bar .bar {
+  background-color: $scheme-black!important;
+}
+
+.appWrapper.black-scheme-color #loading-bar-spinner .spinner-icon {
+  border-top-color: $scheme-black;
+  border-left-color: $scheme-black;
+}
+
+.appWrapper.black-scheme-color #loading-bar .peg {
+  @include box-shadow($scheme-black 1px 0 6px 1px);
+}
+
+.appWrapper.black-scheme-color  {
+  #navigation {
+    .dropdown {
+      >ul li {
+        &:hover,
+        &.active {
+          > a {
+            color: $scheme-black !important;
+          }
+        }
+      }
+      &.submenu.open>a {
+        color: white !important;
+      }
+    }
+  }
+  .pageheader .page-bar .page-breadcrumb > li:not(:first-child) > a:hover {
+    color: $scheme-black!important;
+  }
+}
+
+.sidebar-sm,
+.sidebar-xs,
+.hz-menu {
+  #sidebar.scheme-black {
+    #navigation {
+      li {
+        &.dropdown,
+        &.submenu {
+          > ul {
+            background-color: darken($scheme-black, 7%);
+          }
+        }
+      }
+    }
+  }
+}
+
+//scheme-drank
+
+#header.scheme-drank {
+  background-color: $header-default;
+}
+
+#header .branding.scheme-drank,
+#sidebar.scheme-drank,
+#sidebar.scheme-drank #navigation,
+#sidebar.scheme-drank #sidebar-wrap:before,
+#header.scheme-drank li.toggle-right-sidebar > a,
+.appWrapper.scheme-drank .page-breadcrumb > li:first-child {
+  background-color: $sidebar-default!important;
+}
+
+.appWrapper.drank-scheme-color #navigation > li.active > a,
+.appWrapper.drank-scheme-color #loading-bar .bar {
+  background-color: $scheme-drank!important;
+}
+
+.appWrapper.drank-scheme-color #loading-bar-spinner .spinner-icon {
+  border-top-color: $scheme-drank;
+  border-left-color: $scheme-drank;
+}
+
+.appWrapper.drank-scheme-color #loading-bar .peg {
+  @include box-shadow($scheme-drank 1px 0 6px 1px);
+}
+
+.appWrapper.drank-scheme-color  {
+  #navigation {
+    .dropdown {
+      >ul li {
+        &:hover,
+        &.active {
+          > a {
+            color: $scheme-drank !important;
+          }
+        }
+      }
+      &.submenu.open>a {
+        color: white !important;
+      }
+    }
+  }
+  .pageheader .page-bar .page-breadcrumb > li:not(:first-child) > a:hover {
+    color: $scheme-drank!important;
+  }
+}
+
+.sidebar-sm,
+.sidebar-xs,
+.hz-menu {
+  #sidebar.scheme-drank {
+    #navigation {
+      li {
+        &.dropdown,
+        &.submenu {
+          > ul {
+            background-color: darken($sidebar-default, 5%);
+          }
+        }
+      }
+    }
+  }
+}
+
+//scheme-greensea
+
+#header.scheme-greensea {
+  background-color: $scheme-greensea;
+}
+
+#header .branding.scheme-greensea,
+#sidebar.scheme-greensea,
+#sidebar.scheme-greensea #navigation,
+#sidebar.scheme-greensea #sidebar-wrap:before,
+#header.scheme-greensea li.toggle-right-sidebar > a,
+.appWrapper.scheme-greensea .page-breadcrumb > li:first-child {
+  background-color: darken($scheme-greensea, 5%)!important;
+}
+
+.appWrapper.greensea-scheme-color #navigation > li.active > a,
+.appWrapper.greensea-scheme-color #loading-bar .bar {
+  background-color: $active-default!important;
+}
+
+.appWrapper.greensea-scheme-color #loading-bar-spinner .spinner-icon {
+  border-top-color: $active-default;
+  border-left-color: $active-default;
+}
+
+.appWrapper.greensea-scheme-color #loading-bar .peg {
+  @include box-shadow($active-default 1px 0 6px 1px);
+}
+
+.appWrapper.greensea-scheme-color  {
+  #navigation {
+    .dropdown {
+      >ul li {
+        &:hover,
+        &.active {
+          > a {
+            color: $active-default !important;
+          }
+        }
+      }
+      &.submenu.open>a {
+        color: white !important;
+      }
+    }
+  }
+  .pageheader .page-bar .page-breadcrumb > li:not(:first-child) > a:hover {
+    color: $active-default!important;
+  }
+}
+
+.sidebar-sm,
+.sidebar-xs,
+.hz-menu {
+  #sidebar.scheme-greensea {
+    #navigation {
+      li {
+        &.dropdown,
+        &.submenu {
+          > ul {
+            background-color: darken($scheme-greensea, 11%);
+          }
+        }
+      }
+    }
+  }
+}
+
+//scheme-cyan
+
+#header.scheme-cyan {
+  background-color: $scheme-cyan;
+}
+
+#header .branding.scheme-cyan,
+#sidebar.scheme-cyan,
+#sidebar.scheme-cyan #navigation,
+#sidebar.scheme-cyan #sidebar-wrap:before,
+#header.scheme-cyan li.toggle-right-sidebar > a,
+.appWrapper.scheme-cyan .page-breadcrumb > li:first-child {
+  background-color: darken($scheme-cyan, 5%)!important;
+}
+
+.appWrapper.cyan-scheme-color #navigation > li.active > a,
+.appWrapper.cyan-scheme-color #loading-bar .bar {
+  background-color: $scheme-cyan!important;
+}
+
+.appWrapper.cyan-scheme-color #loading-bar-spinner .spinner-icon {
+  border-top-color: $scheme-cyan;
+  border-left-color: $scheme-cyan;
+}
+
+.appWrapper.cyan-scheme-color #loading-bar .peg {
+  @include box-shadow($scheme-cyan 1px 0 6px 1px);
+}
+
+.appWrapper.cyan-scheme-color  {
+  #navigation {
+    .dropdown {
+      >ul li {
+        &:hover,
+        &.active {
+          > a {
+            color: $scheme-cyan !important;
+          }
+        }
+      }
+      &.submenu.open>a {
+        color: white !important;
+      }
+    }
+  }
+  .pageheader .page-bar .page-breadcrumb > li:not(:first-child) > a:hover {
+    color: $scheme-cyan!important;
+  }
+}
+
+.sidebar-sm,
+.sidebar-xs,
+.hz-menu {
+  #sidebar.scheme-cyan {
+    #navigation {
+      li {
+        &.dropdown,
+        &.submenu {
+          > ul {
+            background-color: darken($scheme-cyan, 15%);
+          }
+        }
+      }
+    }
+  }
+}
+
+//scheme-lightred
+
+#header.scheme-lightred {
+  background-color: $scheme-lightred;
+}
+
+#header .branding.scheme-lightred,
+#sidebar.scheme-lightred,
+#sidebar.scheme-lightred #navigation,
+#sidebar.scheme-lightred #sidebar-wrap:before,
+#header.scheme-lightred li.toggle-right-sidebar > a,
+.appWrapper.scheme-lightred .page-breadcrumb > li:first-child {
+  background-color: darken($scheme-lightred, 5%)!important;
+}
+
+.appWrapper.lightred-scheme-color #navigation > li.active > a,
+.appWrapper.lightred-scheme-color #loading-bar .bar {
+  background-color: $scheme-lightred!important;
+}
+
+.appWrapper.lightred-scheme-color #loading-bar-spinner .spinner-icon {
+  border-top-color: $scheme-lightred;
+  border-left-color: $scheme-lightred;
+}
+
+.appWrapper.lightred-scheme-color #loading-bar .peg {
+  @include box-shadow($scheme-lightred 1px 0 6px 1px);
+}
+
+.appWrapper.lightred-scheme-color  {
+  #navigation {
+    .dropdown {
+      >ul li {
+        &:hover,
+        &.active {
+          > a {
+            color: $scheme-lightred !important;
+          }
+        }
+      }
+      &.submenu.open>a {
+        color: white !important;
+      }
+    }
+  }
+  .pageheader .page-bar .page-breadcrumb > li:not(:first-child) > a:hover {
+    color: $scheme-lightred!important;
+  }
+}
+
+.sidebar-sm,
+.sidebar-xs,
+.hz-menu {
+  #sidebar.scheme-lightred {
+    #navigation {
+      li {
+        &.dropdown,
+        &.submenu {
+          > ul {
+            background-color: darken($scheme-lightred, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+//scheme-light
+
+#header.scheme-light {
+  background-color: $scheme-light;
+}
+
+#header .branding.scheme-light,
+#sidebar.scheme-light,
+#sidebar.scheme-light #navigation,
+#sidebar.scheme-light #sidebar-wrap:before,
+#header.scheme-light li.toggle-right-sidebar > a {
+  background-color: $scheme-light!important;
+}
+
+.appWrapper.scheme-light .page-breadcrumb > li:first-child {
+  background-color: $transparent-black-7;
+}
+
+#header.scheme-light {
+  @include box-shadow(0 2px 2px rgba(0,0,0,0.05),0 1px 0 rgba(0,0,0,0.05));
+  .nav-right > li > a,
+  .nav-left > li > a {
+    color: $transparent-black-7;
+
+    &:hover {
+      color: $transparent-black-9;
+    }
+  }
+  .nav-left > li.divided-right {
+    border-color: $transparent-black-1;
+  }
+  .search {
+    .form-control {
+      color: $transparent-black-5;
+      border-color: $transparent-black-2;
+
+      @include placeholder {
+        color: $transparent-black-3;
+      }
+
+      &:focus {
+        border-color: $transparent-black-5;
+
+        @include placeholder {
+          color: $transparent-black-5;
+        }
+      }
+    }
+    &:after {
+      color: $transparent-black-3;
+    }
+  }
+  li.toggle-right-sidebar > a {
+    border-left: 1px solid $transparent-black-1;
+  }
+}
+
+#header .branding.scheme-light {
+  border-right: 1px solid $transparent-black-1;
+  .brand {
+    color: $font-color-dark;
+    background-image: url(../images/minovate-logo-color.png);
+  }
+}
+
+#sidebar.scheme-light,
+#sidebar.scheme-light #sidebar-wrap:before {
+  border-right: 1px solid $transparent-black-15;
+
+  accordion {
+    .panel-group {
+      .panel {
+        >.panel-heading {
+          .panel-title {
+            border-bottom: 1px solid $transparent-black-1;
+
+            >a {
+              color: $transparent-black-5;
+
+              &:hover {
+                color: $transparent-black-8;
+              }
+            }
+          }
+        }
+
+        &.closed {
+          >.panel-heading {
+            background-color: $transparent-black-05;
+
+            .panel-title {
+
+              >a {
+                color: $transparent-black-8;
+
+                &:hover {
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+
+        .panel-body {
+          color: $transparent-black-7;
+        }
+      }
+    }
+  }
+
+  .summary {
+    .media {
+      .media-body {
+        color: $transparent-black-3;
+
+        .media-heading {
+          color: $transparent-black-5;
+        }
+      }
+    }
+  }
+}
+
+#sidebar.scheme-light #navigation {
+
+  >li {
+    &.open,
+    &:hover {
+      >a {
+        background-color: $transparent-black-05;
+        color: $transparent-black-7;
+      }
+      >i {
+        color: $transparent-black-7;
+      }
+    }
+    &.active {
+      >a {
+        background-color: $active-el;
+        color: white;
+      }
+      >i {
+        color: white;
+      }
+    }
+
+    a {
+      color: $transparent-black-5;
+    }
+  }
+
+  .dropdown {
+    >ul {
+      background-color: $transparent-black-1;
+
+      li {
+
+        &:hover,
+        &.active {
+          >a {
+            color: $active-el;
+          }
+        }
+      }
+    }
+  }
+
+  .submenu {
+    &.open {
+      >a {
+        color: $transparent-black-7!important;
+      }
+    }
+
+    >ul {
+      background-color: transparent;
+    }
+  }
+}
+
+.appWrapper.light-scheme-color #navigation > li.active > a {
+  background-color: $transparent-white-1;
+}
+
+.appWrapper.light-scheme-color #loading-bar .bar {
+  background-color: $active-el;
+}
+
+.appWrapper.light-scheme-color #loading-bar-spinner .spinner-icon {
+  border-top-color: $active-el;
+  border-left-color: $active-el;
+}
+
+.appWrapper.light-scheme-color #loading-bar .peg {
+  @include box-shadow($active-el 1px 0 6px 1px);
+}
+
+.appWrapper.light-scheme-color  {
+  #navigation .dropdown>ul li {
+    &:hover,
+    &.active {
+      a {
+        color: $scheme-light-color;
+      }
+    }
+  }
+  .pageheader .page-bar .page-breadcrumb > li:not(:first-child) > a:hover {
+    color: $scheme-light-color;
+  }
+}
+
+.sidebar-sm,
+.sidebar-xs,
+.hz-menu {
+  #sidebar.scheme-light {
+    border-right: 0;
+    #navigation {
+      border-right: 1px solid rgba(0, 0, 0, 0.15);
+
+      li {
+        >a {
+          font-weight: $font-weight-normal;
+        }
+        &.dropdown,
+        &.submenu {
+          > ul {
+            background-color: darken($scheme-light, 5%);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

@@ -1,0 +1,104 @@
+ul,
+ol {
+  >li {
+    &.divided-right {
+      border-right: 1px solid $transparent-black-1;
+    }
+  }
+  &.list-type {
+    padding: 0;
+    margin: 7px 0 7px 20px;
+    list-style-type: none;
+
+    li {
+      padding: 2px 2px 2px 0px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        left: -18px;
+        margin-top: 3px;
+        @include icon;
+      }
+    }
+
+    &.arrow li:before {
+      content: "\f061";
+    }
+
+    &.circle li:before {
+      content: "\f10c";
+    }
+
+    &.check li:before {
+      content: "\f046";
+    }
+
+    &.caret-right li:before {
+      content: "\f0da";
+    }
+  }
+}
+
+// nestable lists
+
+.nestable-tree {
+  float: none;
+  width: auto;
+  max-width: none;
+}
+
+.dd-item,
+.dd-dragel {
+  .dd-handle {
+    background: lighten($brand-info, 35%);
+    border: 1px solid lighten($brand-info, 30%);
+    color: lighten($brand-primary, 10%);
+    padding: 4px 20px;
+    margin-bottom: 5px;
+    @include user-select(none);
+    border-radius: 0;
+
+    &:hover {
+      color: $brand-primary;
+      background: lighten($brand-info, 30%);
+      border-color: lighten($brand-info, 25%);
+    }
+
+    .btn {
+      &.add,
+      &.remove,
+      &.edit {
+        padding: 6px;
+        font-size: $font-size-small;
+        line-height: 20px;
+      }
+
+      &:active {
+        @include box-shadow(none);
+      }
+    }
+
+    .tree-handle {
+      padding: 6px 8px;
+      line-height: 22px;
+      background-color: lighten($brand-info, 30%);
+      border-right: 1px solid lighten($brand-info, 25%);
+    }
+  }
+}
+
+// list groups
+
+.list-group {
+  &.no-radius {
+    .list-group-item {
+      border-radius: 0!important;
+    }
+  }
+  &.no-border {
+    .list-group-item {
+      border-width: 1px 0;
+    }
+  }
+}

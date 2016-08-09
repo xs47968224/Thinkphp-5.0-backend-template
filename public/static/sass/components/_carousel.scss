@@ -1,0 +1,29 @@
+// owl carousel
+
+.owl-theme {
+  .owl-controls {
+    .owl-page {
+      span {
+        width: 10px;
+        height: 10px;
+        margin: 5px 4px;
+        background: $brand-default;
+        opacity: .3;
+      }
+      &.active {
+        span {
+          width: 14px;
+          height: 14px;
+          margin: 3px 4px;
+          opacity: .6;
+        }
+      }
+    }
+  }
+}
+
+.tile-simple {
+  .owl-theme .owl-controls {
+    margin-top: 0;
+  }
+}

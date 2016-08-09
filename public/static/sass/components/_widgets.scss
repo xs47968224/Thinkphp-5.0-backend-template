@@ -1,0 +1,236 @@
+//todo widget
+
+.widget-todo {
+  form {
+    .form-control {
+      height: 30px;
+      margin-bottom: 30px;
+    }
+  }
+  .todo-list {
+    >li {
+      position: relative;
+
+      .checkbox-custom {
+        >input {
+          display: none;
+        }
+        >i {
+          margin-left: -74px;
+          margin-right: 33px;
+          margin-top: -3px;
+        }
+      }
+
+      .remove-todo {
+        display: none;
+      }
+
+      &:hover {
+        .remove-todo {
+          display: block;
+        }
+      }
+
+      span {
+        @include user-select(none);
+      }
+
+      &.completed {
+        span {
+          text-decoration: line-through;
+          color: $font-color-lighter;
+        }
+      }
+
+      .edit {
+        display: none;
+      }
+
+      &.editing {
+        .view {
+          display: none;
+        }
+        .edit {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// calendar widget
+
+.widget-calendar {
+  .datepicker {
+    table {
+      width: 100%;
+
+      thead {
+        tr {
+          th {
+            border-radius: 0;
+          }
+          &:first-child {
+            th {
+              &.prev,
+              &.next {
+                font-size: 24px;
+                padding: 15px 10px;
+                color: $transparent-white-5;
+
+                &:hover {
+                  color: white;
+                  background-color: transparent;
+                }
+              }
+              &.picker-switch {
+                font-size: $font-size-large;
+                font-weight: $font-weight-light;
+
+                &:hover {
+                  background-color: darken($slategray, 3%);
+                }
+              }
+            }
+          }
+          &:nth-child(2) {
+            th {
+              background-color: $darken-slategray;
+              font-size: $font-size-base;
+              line-height: 35px;
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            position: relative;
+            font-size: $font-size-base;
+            font-weight: $font-weight-light;
+            padding: 8px 10px;
+
+            &.old,
+            &.new {
+              color: $transparent-white-3;
+            }
+
+            &.active {
+              background-color: $lightred!important;
+              border-radius: 50px;
+              text-shadow: none;
+            }
+
+            &:hover {
+              background-color: darken($slategray, 3%);
+            }
+
+            span{
+              &:hover {
+                background-color: darken($slategray, 6%);
+              }
+              &.active {
+                background-color: $lightred!important;
+                border-radius: 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .picker-switch {
+    table td span {
+      margin: 2px 0;
+      &:hover {
+        background-color: darken($slategray, 3%);
+      }
+    }
+  }
+  .timepicker {
+    table td span:hover {
+      background-color: darken($slategray, 3%);
+    }
+  }
+  .bootstrap-datetimepicker-widget table td.day:hover,
+  .bootstrap-datetimepicker-widget table td.hour:hover,
+  .bootstrap-datetimepicker-widget table td.minute:hover,
+  .bootstrap-datetimepicker-widget table td.second:hover {
+    background-color: darken($slategray, 3%);
+  }
+}
+
+//message widget
+
+.widget-message {
+  .ta-toolbar {
+    margin: 0;
+    padding: 5px;
+    background-color: #f8f8f8;
+  }
+  .ta-scroll-window {
+    &.form-control {
+      border: 0;
+      border-bottom: 10px solid #f8f8f8;
+      border-radius: 0;
+      min-height: 160px;
+    }
+    >.ta-bind  {
+      min-height: 160px;
+    }
+  }
+  .ta-root.focussed {
+    .ta-scroll-window.form-control {
+      border-color: #e2e2e2;
+    }
+    .ta-toolbar {
+      background-color: #e2e2e2;
+    }
+  }
+}
+
+//appointments widget
+
+.widget-appointments {
+  .day {
+    font-size: 120px;
+    line-height: 120px;
+    font-weight: $font-weight-light;
+  }
+  .month {
+    font-size: 36px;
+    line-height: 56px;
+    font-weight: $font-weight-bold;
+  }
+
+  .b-l {
+    border-left: 2px solid $transparent-white-2;
+  }
+  .owl-carousel {
+    .owl-item {
+      padding: 0 60px;
+    }
+    .owl-controls {
+      .owl-buttons {
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        width: 100%;
+        text-align: left;
+
+        .owl-next {
+          float: right;
+        }
+
+        div {
+          background: transparent;
+          border: 1px solid $transparent-white-5;
+          font-size: $font-size-large;
+          padding: 4px 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+//shadows
+@mixin box-shadow($shadow...) {
+	-webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+			box-shadow: $shadow;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+	// IE8 filter
+	$opacity-ie: ($opacity * 100);
+	filter: #{alpha(opacity=$opacity-ie)};
+	opacity: $opacity;
+}
+
+// clear margin & padding
+@mixin clear-margin {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin icon {
+  display: inline-block;
+  font-family: $font-icons;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,70 @@
+$font-lato:									"Lato", "Arial", sans-serif !default;
+$font-arial:								"Arial", sans-serif !default;
+$font-dosis:                                'Dosis', "Arial", sans-serif !default;
+$font-ubuntu-mono:                          'Ubuntu Mono', sans-serif;
+$font-icons:            			        'FontAwesome';
+$font-georgia:                              Georgia, serif !default;
+
+$font-size-base:							14px !default;
+$font-size-extra-large:				ceil($font-size-base * 2.25) !default; // ~32px
+$font-size-large:							ceil($font-size-base * 1.25) !default; // ~18px
+$font-size-small:							ceil($font-size-base * 0.85) !default; // ~12px
+$font-size-mini:							ceil($font-size-base * 0.675) !default; // ~10px
+
+$font-color-white:                          #fff;
+$font-color:                                #616f77;
+$font-color-dark:                           darken($font-color, 10%);
+$font-color-light:                          lighten($font-color, 20%);
+$font-color-lighter:                        lighten($font-color, 35%);
+
+$font-weight-thin: 						    100;
+$font-weight-light: 					    300;
+$font-weight-normal: 					    400;
+$font-weight-medium: 					    500;
+$font-weight-bold: 						    700;
+
+$font-style-italic:                         italic;
+
+// size min width
+
+$site-min-width:         			        320px !default;
+
+$header-bg:                                 #51445f;
+$sidebar-bg:                                #493d55;
+$rightbar-bg:                               #1d2833;
+
+$transparent-white-05:			rgba(255,255,255,.05);
+$transparent-white-1:				rgba(255,255,255,.1);
+$transparent-white-15:			rgba(255,255,255,.15);
+$transparent-white-2:				rgba(255,255,255,.2);
+$transparent-white-25:			rgba(255,255,255,.25);
+$transparent-white-3:				rgba(255,255,255,.3);
+$transparent-white-35:      rgba(255,255,255,.35);
+$transparent-white-4:				rgba(255,255,255,.4);
+$transparent-white-5:				rgba(255,255,255,.5);
+$transparent-white-6:				rgba(255,255,255,.6);
+$transparent-white-7:				rgba(255,255,255,.7);
+$transparent-white-8:				rgba(255,255,255,.8);
+$transparent-white-9:       rgba(255,255,255,.9);
+
+$transparent-black-05:			rgba(0,0,0,.05);
+$transparent-black-1:				rgba(0,0,0,.1);
+$transparent-black-15:			rgba(0,0,0,.15);
+$transparent-black-2:				rgba(0,0,0,.2);
+$transparent-black-25:			rgba(0,0,0,.25);
+$transparent-black-3:				rgba(0,0,0,.3);
+$transparent-black-4:				rgba(0,0,0,.4);
+$transparent-black-5:				rgba(0,0,0,.5);
+$transparent-black-55:			rgba(0,0,0,.55);
+$transparent-black-6:				rgba(0,0,0,.6);
+$transparent-black-7:				rgba(0,0,0,.7);
+$transparent-black-8:				rgba(0,0,0,.8);
+$transparent-black-9:       rgba(0,0,0,.9);
+
+$link-color:                    $transparent-white-5;
+$link-color-dark:               $transparent-black-5;
+$active-el:                     $greensea;
+$content-bg:                    lighten(#616f77, 49%);
+$active-link-bg:                #f8f8f8;
+
+
