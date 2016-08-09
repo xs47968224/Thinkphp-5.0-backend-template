@@ -1,33 +1,26 @@
--- phpMyAdmin SQL Dump
--- version 4.5.5.1
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: 2016-07-26 11:39:20
--- 服务器版本： 5.6.31
--- PHP Version: 5.6.19
+/*
+Navicat MySQL Data Transfer
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+Source Server         : localhost
+Source Server Version : 50631
+Source Host           : localhost:3306
+Source Database       : thinkphp
 
+Target Server Type    : MYSQL
+Target Server Version : 50631
+File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+Date: 2016-08-09 21:19:39
+*/
 
---
--- Database: `thinkphp`
---
+SET FOREIGN_KEY_CHECKS=0;
 
--- --------------------------------------------------------
-
---
--- 表的结构 `think_administrator`
---
-
+-- ----------------------------
+-- Table structure for `think_administrator`
+-- ----------------------------
+DROP TABLE IF EXISTS `think_administrator`;
 CREATE TABLE `think_administrator` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nickname` varchar(100) DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
@@ -39,37 +32,19 @@ CREATE TABLE `think_administrator` (
   `last_login_time` int(11) DEFAULT NULL,
   `expire_time` int(11) DEFAULT NULL,
   `create_time` int(11) DEFAULT NULL,
-  `update_time` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `update_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `think_administrator`
---
+-- ----------------------------
+-- Records of think_administrator
+-- ----------------------------
+INSERT INTO `think_administrator` VALUES ('1', 'Admin', 'admin', '7c99b344032cd02cb1c1ae958174fd82', '112', '15062657363', '1', '57a99128f2c90_thumb.jpg', '127.0.0.1', '1470748670', '1470777470', '1463362516', '1470748660');
+INSERT INTO `think_administrator` VALUES ('2', 'Editor', 'editor', 'df620c97d6c8a15b672191fe11b9a886', '519', '13888888888', '1', null, '127.0.0.1', '1470748703', '1470777503', '1463363564', '1470660594');
 
-INSERT INTO `think_administrator` (`id`, `nickname`, `username`, `password`, `salt`, `mobile`, `status`, `avatar`, `last_login_ip`, `last_login_time`, `expire_time`, `create_time`, `update_time`) VALUES
-(1, 'Admin', 'admin', '7c99b344032cd02cb1c1ae958174fd82', '112', '13888888888', 1, NULL, '127.0.0.1', 1469530998, 1469534598, 1463362516, 1469511520),
-(2, 'Editor', 'editor', '7c99b344032cd02cb1c1ae958174fd82', '112', '13888888888', 1, NULL, '127.0.0.1', 1469508726, 1469513500, 1463363564, 1469513500),
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `think_administrator`
---
-ALTER TABLE `think_administrator`
-  ADD PRIMARY KEY (`id`);
-
---
--- 在导出的表使用AUTO_INCREMENT
---
-
---
--- 使用表AUTO_INCREMENT `think_administrator`
---
-ALTER TABLE `think_administrator`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+-- ----------------------------
+-- Table structure for `think_posts`
+-- ----------------------------
 DROP TABLE IF EXISTS `think_posts`;
 CREATE TABLE `think_posts` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -87,8 +62,8 @@ CREATE TABLE `think_posts` (
   PRIMARY KEY (`id`),
   KEY `type_status_date` (`status`,`create_time`),
   KEY `post_author` (`post_author`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- ----------------------------
+-- Records of think_posts
+-- ----------------------------
