@@ -1,13 +1,18 @@
 <?php
 namespace app\admin\controller;
 use app\admin\model\Administrator;
+use app\admin\model\Posts;
 use app\admin\controller\AdminAuth;
 use think\Validate;
 class IndexController extends AdminAuth
 {
     public function index()
     {
-        return view();
+        $this->data['admin_count'] = db('administrator')->count();
+        $this->data['post_count_all'] = db('posts')->count();
+        $this->data['post_count_latest_month'] = Posts::whereTime('create_time','>=',date('Y-m-01'))->where('status','=',1)->count();
+        $this->assign('data',$this->data);
+        return $this->fetch();
     }
 
     public function login()

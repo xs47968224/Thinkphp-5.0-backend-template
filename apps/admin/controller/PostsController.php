@@ -36,8 +36,34 @@ class PostsController extends AdminAuth
         //                 ->order('posts.create_time', 'DESC')
         //                 ->paginate();
 
-        //直接查询 getPostAuthorAttr 中已经得到了 post_author 名称
-        $list =  Posts::where('status','>=','0')
+        //直接查询,注：getPostAuthorAttr 中已经得到了 post_author 名称
+        $request = request();
+        $param = $request->param();
+
+        $map['status'] = ['>','0'];
+
+        if(!empty($param)){
+            $this->data['search'] = $param;
+            if(isset($param['title'])){
+                $map['post_title'] = ['like','%'.$param['title'].'%'];
+            }
+
+            if(isset($param['start_time']) || isset($param['end_time'])){
+                if(isset($param['start_time']) && isset($param['end_time'])){
+                    $map['create_time'] = ['between time',[$param['start_time'],$param['end_time']]];
+                }
+
+                if(isset($param['start_time']) && !$param['end_time']){
+                    $map['create_time'] = ['>= time',$param['start_time']];
+                }
+                if(isset($param['end_time']) && !$param['start_time']){
+                    $map['create_time'] = ['<= time',$param['end_time']];
+                }
+            }
+        }
+
+
+        $list =  Posts::where($map)
                         ->order('create_time', 'DESC')
                         ->paginate();
 

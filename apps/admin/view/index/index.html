@@ -47,8 +47,8 @@
                             <!-- /col -->
                             <!-- col -->
                             <div class="col-xs-8">
-                                <p class="text-elg text-strong mb-0">10</p>
-                                <span>会员人数</span>
+                                <p class="text-elg text-strong mb-0">{$data['admin_count']}</p>
+                                <span>管理员人数</span>
                             </div>
                             <!-- /col -->
                         </div>
@@ -61,12 +61,12 @@
                         <div class="row">
                             <!-- col -->
                             <div class="col-xs-6">
-                                <a href="{:url('/admin/user')}"><i class="fa fa-info fa-2x"></i> 查看</a>
+                                <a href="{:url('/admin/administrator')}"><i class="fa fa-info fa-2x"></i> 查看</a>
                             </div>
                             <!-- /col -->
                             <!-- col -->
                             <div class="col-xs-6">
-                                <a href="{:url('/admin/user/add')}"><i class="fa fa-plus fa-2x"></i> 新增</a>
+                                <a href="{:url('/admin/administrator/create')}"><i class="fa fa-plus fa-2x"></i> 新增</a>
                             </div>
                             <!-- /col -->
                         </div>
@@ -77,44 +77,6 @@
             </div>
             <!-- /col -->
 
-            <!-- col -->
-            <div class="card-container col-lg-3 col-sm-6 col-sm-12">
-                <div class="card">
-                    <div class="front bg-lightred">
-
-                        <!-- row -->
-                        <div class="row">
-                            <!-- col -->
-                            <div class="col-xs-4">
-                                <i class="fa fa-shopping-cart fa-4x"></i>
-                            </div>
-                            <!-- /col -->
-                            <!-- col -->
-                            <div class="col-xs-8">
-                                <p class="text-elg text-strong mb-0">11</p>
-                                <span>订单数</span>
-                            </div>
-                            <!-- /col -->
-                        </div>
-                        <!-- /row -->
-
-                    </div>
-                    <div class="back bg-lightred">
-
-                        <!-- row -->
-                        <div class="row">
-                            <!-- col -->
-                            <div class="col-xs-12">
-                                <a href=":url('/admin/order')"><i class="fa fa-chain-broken fa-2x"></i> 查看</a>
-                            </div>
-                            <!-- /col -->
-                        </div>
-                        <!-- /row -->
-
-                    </div>
-                </div>
-            </div>
-            <!-- /col -->
 
             <!-- col -->
             <div class="card-container col-lg-3 col-sm-6 col-sm-12">
@@ -125,13 +87,13 @@
                         <div class="row">
                             <!-- col -->
                             <div class="col-xs-4">
-                                <i class="fa fa-cny fa-4x" aria-hidden="true"></i>
+                                <i class="fa fa-list fa-4x" aria-hidden="true"></i>
                             </div>
                             <!-- /col -->
                             <!-- col -->
                             <div class="col-xs-8">
-                                <p class="text-elg text-strong mb-0">100</p>
-                                <span>销售额</span>
+                                <p class="text-elg text-strong mb-0">{$data['post_count_all']}</p>
+                                <span>总文章数</span>
                             </div>
                             <!-- /col -->
                         </div>
@@ -145,7 +107,7 @@
 
                             <!-- col -->
                             <div class="col-xs-12">
-                                <a href="{:url('/admin')}"><i class="fa fa-ellipsis-h fa-2x"></i> 更多</a>
+                                <a href="{:url('/admin/posts')}"><i class="fa fa-ellipsis-h fa-2x"></i> 更多</a>
                             </div>
                             <!-- /col -->
 
@@ -166,13 +128,13 @@
                         <div class="row">
                             <!-- col -->
                             <div class="col-xs-4">
-                                <i class="fa fa-cny fa-4x" aria-hidden="true"></i>
+                                <i class="fa fa-list-alt fa-4x" aria-hidden="true"></i>
                             </div>
                             <!-- /col -->
                             <!-- col -->
                             <div class="col-xs-8">
-                                <p class="text-elg text-strong mb-0">100</p>
-                                <span>上月总额</span>
+                                <p class="text-elg text-strong mb-0">{$data['post_count_latest_month']}</p>
+                                <span>当月发布</span>
                             </div>
                             <!-- /col -->
                         </div>
@@ -185,12 +147,12 @@
                         <div class="row">
                             <!-- col -->
                             <div class="col-xs-6">
-                                <a href="{:url('/admin')}"><i class="fa fa-chain-broken fa-2x"></i> 详细</a>
+                                <a href="{:url('/admin/posts')}?start_time={:date('Y-m-01')}&end_time="><i class="fa fa-chain-broken fa-2x"></i> 详细</a>
                             </div>
                             <!-- /col -->
                             <!-- col -->
                             <div class="col-xs-6">
-                                <a href="{:url('/admin')}"><i class="fa fa-ellipsis-h fa-2x"></i> 更多</a>
+                                <a href="{:url('/admin/posts')}"><i class="fa fa-ellipsis-h fa-2x"></i> 更多</a>
                             </div>
                             <!-- /col -->
                         </div>

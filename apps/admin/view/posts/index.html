@@ -24,14 +24,43 @@
 
         <!-- page content -->
         <div class="pagecontent">
+             <!-- search-box -->
+            <div class="row">
+                <!-- col -->
+                <div class="col-md-12">
+
+                    <!-- tile -->
+                    <section class="tile">
+                        <!-- tile header -->
+                        <div class="tile-header dvd dvd-btm">
+                            <h1 class="custom-font"><strong>{$data.module_name}</strong> 搜索</h1>
+                        </div>
+                        <!-- /tile header -->
+
+                        <!-- tile body -->
+                        <div class="tile-body">
+
+                            <form role="form" enctype="multipart/form-data" action="{:url($data.module_url)}" method="GET">
+                                <div class="row">
+                                    <div class="col-sm-3"><input class="form-control" name="title" value="{if (isset($data['search']) AND isset($data['search']['title']) )}{$data['search']['title']}{/if}" placeholder="文章标题"></div>
+                                    <div class="col-sm-3"><input class="form-control datepicker" data-format="YYYY-MM-DD" name="start_time" value="{if (isset($data['search']) AND isset($data['search']['start_time']) )}{$data['search']['start_time']}{/if}" placeholder="创建日期起始时间"></div>
+                                    <div class="col-sm-3"><input class="form-control datepicker" data-format="YYYY-MM-DD" name="end_time" value="{if (isset($data['search']) AND isset($data['search']['end_time']) )}{$data['search']['end_time']}{/if}" placeholder="创建日期结束时间"></div>
+                                    <div class="col-sm-3"><button class="btn btn-info btn-block" type="submit">提交</button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- end search-box -->
+
+
+
 
             <!-- row -->
             <div class="row">
                 <!-- col -->
                 <div class="col-md-12">
-
-
-
 
                     <!-- tile -->
                     <section class="tile">
