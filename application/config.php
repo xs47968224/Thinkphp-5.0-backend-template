@@ -47,7 +47,7 @@ return [
     // 默认语言
     'default_lang'           => 'zh-cn',
     // 是否启用控制器类后缀
-    'controller_suffix'      => false,
+    'controller_suffix'      => true,
 
     // +----------------------------------------------------------------------
     // | 模块设置
@@ -68,7 +68,7 @@ return [
     // 操作方法后缀
     'action_suffix'          => '',
     // 自动搜索控制器
-    'controller_auto_search' => true,
+    'controller_auto_search' => false,
 
     // +----------------------------------------------------------------------
     // | URL设置
