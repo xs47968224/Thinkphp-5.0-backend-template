@@ -15,7 +15,6 @@
 ---------------
 版本 1.1.2 （2016-08-11）
  + 1.恢复 application 目录名，因为根目中think文件也定义了APP_PATH, 但官方学习手册中没说，按照手册改application目录名会造成php think命令无法使用，故恢复目录名，当然还可以修改think文件中的APP_PATH定义，但是TP5 RC4一直在更新，所以不推荐修改，以免自己挖坑
- + 2.由于在全局config中定义了controller_suffix = true, 开始写admin模块的时候一切正常，当我准备开始写前台index模块的时候，发现找不到controller:index，不知道算不算TP5 BUG，现在恢复全局config中controller_suffix = false, 在admin模块config中单独定义了controller_suffix = true
 
 版本 1.1.1 （2016-08-10）
  + 1.修改后台首页几个假数据调用
