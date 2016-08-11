@@ -1,6 +1,7 @@
 <?php
 //配置文件
 return [
+	'controller_suffix'      => true,
 	'object_name' => 'TP5 Admin Tpl',
 	'auth_password_check' => true, //动态密码校验
 	'auth_expired_check'  => true, //动态过期时间校验

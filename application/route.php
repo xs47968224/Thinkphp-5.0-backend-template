@@ -34,6 +34,4 @@ return [
     'admin/posts/delete/:id'                     => 'admin/posts/delete',
     'admin/posts/delete_image/:id'               => 'admin/posts/delete_image',
 
-
-
 ];
