@@ -13,7 +13,7 @@ class PostsController extends AdminAuth
 		'module_name' => '文章',
 		'module_url'  => '/admin/posts/',
 		'module_slug' => 'posts',
-		'upload_path' => ROOT_PATH . 'public' . DS . 'uploads',
+		'upload_path' => UPLOAD_PATH,
 		'upload_url'  => '/public/uploads/',
 		);
 

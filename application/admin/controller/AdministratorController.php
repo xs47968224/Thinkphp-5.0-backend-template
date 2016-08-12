@@ -12,7 +12,7 @@ class AdministratorController extends AdminAuth
 		'module_name' => '管理员',
 		'module_url'  => '/admin/administrator/',
 		'module_slug' => 'administrator',
-		'upload_path' => ROOT_PATH . 'public' . DS . 'uploads',
+		'upload_path' => UPLOAD_PATH,
 		'upload_url'  => '/public/uploads/',
 		);
 
