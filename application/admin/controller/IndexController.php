@@ -8,8 +8,8 @@ class IndexController extends AdminAuth
 {
     public function index()
     {
-        $this->data['admin_count'] = db('administrator')->count();
-        $this->data['post_count_all'] = db('posts')->count();
+        $this->data['admin_count'] = Administrator::where('status','=',1)->count();
+        $this->data['post_count_all'] = Posts::where('status','=',1)->count();
         $this->data['post_count_latest_month'] = Posts::whereTime('create_time','>=',date('Y-m-01'))->where('status','=',1)->count();
         $this->assign('data',$this->data);
         return $this->fetch();

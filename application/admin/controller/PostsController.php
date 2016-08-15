@@ -56,7 +56,7 @@ class PostsController extends AdminAuth
         $request = request();
         $param = $request->param();
 
-        $map['status'] = ['>','0'];
+        $map['status'] = ['>=','0'];
 
         if(!empty($param)){
             $this->data['search'] = $param;
