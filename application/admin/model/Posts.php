@@ -56,11 +56,5 @@ class Posts extends Model
         return $admins[$value];
     }
 
-    protected function getPostContentAttr($value)
-    {
-        return str_replace('&', '&amp;', $value);
-    }
-
-
 }
 

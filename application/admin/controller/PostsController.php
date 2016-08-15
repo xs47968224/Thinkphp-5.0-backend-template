@@ -190,6 +190,7 @@ class PostsController extends AdminAuth
 
         //默认值设置
         $item = Posts::get($id);
+        $item['post_content'] = str_replace('&', '&amp;', $item['post_content']);
 
         $this->assign('item',$item);
         $this->assign('data',$this->data);
