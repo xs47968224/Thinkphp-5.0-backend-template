@@ -17,6 +17,7 @@ return [
     'Parse error'               => '语法解析错误',
     'Type error'                => '类型错误',
     'Fatal error'               => '致命错误',
+    'syntax error'              => '语法错误',
 
     // 框架核心错误提示
     'dispatch type not support' => '不支持的调度类型',
@@ -58,4 +59,5 @@ return [
     'tag error'                 => '模板标签错误',
     'cache write error'         => '缓存写入失败',
     'sae mc write error'        => 'SAE mc 写入错误',
+    'route name not exists'     => '路由命名标识不存在',
 ];

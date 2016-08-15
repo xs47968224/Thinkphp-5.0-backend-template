@@ -124,7 +124,7 @@ if (!function_exists('input')) {
         if ($pos = strpos($key, '.')) {
             // 指定参数来源
             $method = substr($key, 0, $pos);
-            if (in_array($method, ['get', 'post', 'put', 'delete', 'param', 'request', 'session', 'cookie', 'server', 'env', 'path', 'file'])) {
+            if (in_array($method, ['get', 'post', 'put', 'patch', 'delete', 'param', 'request', 'session', 'cookie', 'server', 'env', 'path', 'file'])) {
                 $key = substr($key, $pos + 1);
             } else {
                 $method = 'param';
@@ -187,11 +187,12 @@ if (!function_exists('db')) {
      * 实例化数据库类
      * @param string        $name 操作的数据表名称（不含前缀）
      * @param array|string  $config 数据库配置参数
+     * @param bool          $force 是否强制重新连接
      * @return \think\db\Query
      */
-    function db($name = '', $config = [])
+    function db($name = '', $config = [], $force = true)
     {
-        return Db::connect($config)->name($name);
+        return Db::connect($config, $force)->name($name);
     }
 }
 
@@ -327,7 +328,7 @@ if (!function_exists('cookie')) {
             Cookie::clear($value);
         } elseif ('' === $value) {
             // 获取
-            return Cookie::get($name);
+            return 0 === strpos($name, '?') ? Cookie::has(substr($name, 1), $option) : Cookie::get($name);
         } elseif (is_null($value)) {
             // 删除
             return Cookie::delete($name);
@@ -421,12 +422,13 @@ if (!function_exists('view')) {
      * 渲染模板输出
      * @param string    $template 模板文件
      * @param array     $vars 模板变量
+     * @param array     $replace 模板替换
      * @param integer   $code 状态码
      * @return \think\response\View
      */
-    function view($template = '', $vars = [], $code = 200)
+    function view($template = '', $vars = [], $replace = [], $code = 200)
     {
-        return Response::create($template, 'view', $code)->vars($vars);
+        return Response::create($template, 'view', $code)->replace($replace)->assign($vars);
     }
 }
 
@@ -496,12 +498,41 @@ if (!function_exists('redirect')) {
 if (!function_exists('abort')) {
     /**
      * 抛出HTTP异常
-     * @param integer   $code 状态码
-     * @param string    $message 错误信息
-     * @param array     $header 参数
+     * @param integer|Response      $code 状态码 或者 Response对象实例
+     * @param string                $message 错误信息
+     * @param array                 $header 参数
      */
     function abort($code, $message = null, $header = [])
     {
-        throw new \think\exception\HttpException($code, $message, null, $header);
+        if ($code instanceof Response) {
+            throw new \think\exception\HttpResponseException($code);
+        } else {
+            throw new \think\exception\HttpException($code, $message, null, $header);
+        }
+    }
+}
+
+if (!function_exists('halt')) {
+    /**
+     * 调试变量并且中断输出
+     * @param mixed      $var 调试变量或者信息
+     */
+    function halt($var)
+    {
+        dump($var);
+        throw new \think\exception\HttpResponseException(new Response);
+    }
+}
+
+if (!function_exists('token')) {
+    /**
+     * 生成表单令牌
+     * @param string $name 令牌名称
+     * @param mixed  $type 令牌生成方法
+     */
+    function token($name = '__token__', $type = 'md5')
+    {
+        $token = Request::instance()->token($name, $type);
+        return '<input type="hidden" name="' . $name . '" value="' . $token . '" />';
     }
 }

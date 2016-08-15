@@ -18,7 +18,7 @@ return [
     // 注册的根命名空间
     'root_namespace'         => [],
     // 扩展配置文件
-    'extra_config_list'      => ['database', 'route', 'validate'],
+    'extra_config_list'      => ['database', 'validate'],
     // 扩展函数文件
     'extra_file_list'        => [THINK_PATH . 'helper' . EXT],
     // 默认输出类型
@@ -81,6 +81,8 @@ return [
     'url_param_type'         => 0,
     // 是否开启路由
     'url_route_on'           => true,
+    // 路由配置文件（支持配置多个）
+    'route_config_file'      => ['route'],
     // 是否强制使用路由
     'url_route_must'         => false,
     // 域名部署

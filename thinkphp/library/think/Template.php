@@ -61,7 +61,7 @@ class Template
      */
     public function __construct(array $config = [])
     {
-        $this->config['cache_path']   = RUNTIME_PATH . 'temp' . DS;
+        $this->config['cache_path']   = TEMP_PATH;
         $this->config                 = array_merge($this->config, $config);
         $this->config['taglib_begin'] = $this->stripPreg($this->config['taglib_begin']);
         $this->config['taglib_end']   = $this->stripPreg($this->config['taglib_end']);
@@ -303,7 +303,7 @@ class Template
     {
         if ($cacheId && $this->config['display_cache']) {
             // 缓存页面输出
-            return Cache::get($cacheId) ? true : false;
+            return Cache::has($cacheId);
         }
         return false;
     }
@@ -699,7 +699,7 @@ class Template
      */
     public function parseAttr($str, $name = null)
     {
-        $regex = '/\s+(?>(?<name>[\w-]+)\s*)=(?>\s*)([\"\'])(?<value>(?:(?!\\2).)*)\\2/is';
+        $regex = '/\s+(?>(?P<name>[\w-]+)\s*)=(?>\s*)([\"\'])(?P<value>(?:(?!\\2).)*)\\2/is';
         $array = [];
         if (preg_match_all($regex, $str, $matches, PREG_SET_ORDER)) {
             foreach ($matches as $match) {
@@ -1114,9 +1114,9 @@ class Template
             switch ($tagName) {
                 case 'block':
                     if ($single) {
-                        $regex = $begin . '(?:' . $tagName . '\b(?>(?:(?!name=).)*)\bname=([\'\"])(?<name>[\$\w\-\/\.]+)\\1(?>[^' . $end . ']*)|\/' . $tagName . ')' . $end;
+                        $regex = $begin . '(?:' . $tagName . '\b(?>(?:(?!name=).)*)\bname=([\'\"])(?P<name>[\$\w\-\/\.]+)\\1(?>[^' . $end . ']*)|\/' . $tagName . ')' . $end;
                     } else {
-                        $regex = $begin . '(?:' . $tagName . '\b(?>(?:(?!name=).)*)\bname=([\'\"])(?<name>[\$\w\-\/\.]+)\\1(?>(?:(?!' . $end . ').)*)|\/' . $tagName . ')' . $end;
+                        $regex = $begin . '(?:' . $tagName . '\b(?>(?:(?!name=).)*)\bname=([\'\"])(?P<name>[\$\w\-\/\.]+)\\1(?>(?:(?!' . $end . ').)*)|\/' . $tagName . ')' . $end;
                     }
                     break;
                 case 'literal':
@@ -1142,9 +1142,9 @@ class Template
                         $name = 'name';
                     }
                     if ($single) {
-                        $regex = $begin . $tagName . '\b(?>(?:(?!' . $name . '=).)*)\b' . $name . '=([\'\"])(?<name>[\$\w\-\/\.\:@,\\\\]+)\\1(?>[^' . $end . ']*)' . $end;
+                        $regex = $begin . $tagName . '\b(?>(?:(?!' . $name . '=).)*)\b' . $name . '=([\'\"])(?P<name>[\$\w\-\/\.\:@,\\\\]+)\\1(?>[^' . $end . ']*)' . $end;
                     } else {
-                        $regex = $begin . $tagName . '\b(?>(?:(?!' . $name . '=).)*)\b' . $name . '=([\'\"])(?<name>[\$\w\-\/\.\:@,\\\\]+)\\1(?>(?:(?!' . $end . ').)*)' . $end;
+                        $regex = $begin . $tagName . '\b(?>(?:(?!' . $name . '=).)*)\b' . $name . '=([\'\"])(?P<name>[\$\w\-\/\.\:@,\\\\]+)\\1(?>(?:(?!' . $end . ').)*)' . $end;
                     }
                     break;
             }

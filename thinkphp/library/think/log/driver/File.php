@@ -39,9 +39,10 @@ class File
     public function save(array $log = [])
     {
         $now         = date($this->config['time_format']);
-        $destination = $this->config['path'] . date('y_m_d') . '.log';
+        $destination = $this->config['path'] . date('Ym') . DS . date('d') . '.log';
 
-        !is_dir($this->config['path']) && mkdir($this->config['path'], 0755, true);
+        $path = dirname($destination);
+        !is_dir($path) && mkdir($path, 0755, true);
 
         //检测日志文件大小，超过配置大小则备份日志文件重新生成
         if (is_file($destination) && floor($this->config['file_size']) <= filesize($destination)) {
@@ -54,8 +55,9 @@ class File
         } else {
             $current_uri = "cmd:" . implode(' ', $_SERVER['argv']);
         }
-        $runtime    = (number_format(microtime(true), 8, '.', '') - THINK_START_TIME) ?: 0.00000001;
-        $reqs       = number_format(1 / number_format($runtime, 8), 2);
+
+        $runtime    = number_format(microtime(true) - THINK_START_TIME, 10);
+        $reqs       = number_format(1 / $runtime, 2);
         $time_str   = ' [运行时间：' . number_format($runtime, 6) . 's][吞吐率：' . $reqs . 'req/s]';
         $memory_use = number_format((memory_get_usage() - THINK_START_MEM) / 1024, 2);
         $memory_str = ' [内存消耗：' . $memory_use . 'kb]';

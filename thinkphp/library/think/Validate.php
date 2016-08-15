@@ -12,6 +12,7 @@
 namespace think;
 
 use think\Request;
+use think\Session;
 
 class Validate
 {
@@ -68,6 +69,7 @@ class Validate
         'allowIp'     => '不允许的IP访问',
         'denyIp'      => '禁止的IP访问',
         'confirm'     => ':attribute和字段 :rule 不一致',
+        'different'   => ':attribute和字段 :rule 不能相同',
         'egt'         => ':attribute必须大于等于 :rule',
         'gt'          => ':attribute必须大于 :rule',
         'elt'         => ':attribute必须小于等于 :rule',
@@ -401,6 +403,19 @@ class Validate
     }
 
     /**
+     * 验证是否和某个字段的值是否不同
+     * @access protected
+     * @param mixed $value 字段值
+     * @param mixed $rule  验证规则
+     * @param array $data  数据
+     * @return bool
+     */
+    protected function different($value, $rule, $data)
+    {
+        return $this->getDataValue($data, $rule) != $value;
+    }
+
+    /**
      * 验证是否大于等于某个值
      * @access protected
      * @param mixed     $value  字段值
@@ -465,9 +480,10 @@ class Validate
      * @access protected
      * @param mixed     $value  字段值
      * @param string    $rule  验证规则
+     * @param array     $data  验证数据
      * @return bool
      */
-    protected function is($value, $rule)
+    protected function is($value, $rule, $data = [])
     {
         switch ($rule) {
             case 'require':
@@ -527,6 +543,8 @@ class Validate
                 $result = $this->filter($value, FILTER_VALIDATE_FLOAT);
                 break;
             case 'number':
+                $result = is_numeric($value);
+                break;
             case 'integer':
                 // 是否为整形
                 $result = $this->filter($value, FILTER_VALIDATE_INT);
@@ -537,7 +555,7 @@ class Validate
                 break;
             case 'boolean':
                 // 是否为布尔值
-                $result = $this->filter($value, FILTER_VALIDATE_BOOLEAN);
+                $result = in_array($value, [0, 1, true, false]);
                 break;
             case 'array':
                 // 是否为数组
@@ -547,7 +565,10 @@ class Validate
                 $result = $value instanceof \think\File;
                 break;
             case 'image':
-                $result = $value instanceof \think\File && in_array(exif_imagetype($value->getRealPath()), [1, 2, 3, 6]);
+                $result = $value instanceof \think\File && in_array($this->getImageType($value->getRealPath()), [1, 2, 3, 6]);
+                break;
+            case 'token':
+                $result = $this->token($value, '__token__', $data);
                 break;
             default:
                 if (isset(self::$type[$rule])) {
@@ -559,6 +580,17 @@ class Validate
                 }
         }
         return $result;
+    }
+
+    // 判断图像类型
+    protected function getImageType($image)
+    {
+        if (function_exists('exif_imagetype')) {
+            return exif_imagetype($image);
+        } else {
+            $info = getimagesize($image);
+            return $info[2];
+        }
     }
 
     /**
@@ -685,7 +717,7 @@ class Validate
             if ('jpeg' == $imageType) {
                 $imageType = 'jpg';
             }
-            if (image_type_to_extension($type) != $imageType) {
+            if (image_type_to_extension($type, false) != $imageType) {
                 return false;
             }
         }
@@ -1056,6 +1088,33 @@ class Validate
             $rule = '/^' . $rule . '$/';
         }
         return 1 === preg_match($rule, (string) $value);
+    }
+
+    /**
+     * 验证表单令牌
+     * @access protected
+     * @param mixed     $value  字段值
+     * @param mixed     $rule  验证规则
+     * @param array     $data  数据
+     * @return bool
+     */
+    protected function token($value, $rule, $data)
+    {
+        $rule = !empty($rule) ? $rule : '__token__';
+        if (!isset($data[$rule]) || !Session::has($rule)) {
+            // 令牌数据无效
+            return false;
+        }
+
+        // 令牌验证
+        if (isset($data[$rule]) && Session::get($rule) === $data[$rule]) {
+            // 防止重复提交
+            Session::delete($rule); // 验证完成销毁session
+            return true;
+        }
+        // 开启TOKEN重置
+        Session::delete($rule);
+        return false;
     }
 
     // 获取错误信息
