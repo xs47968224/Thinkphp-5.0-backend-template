@@ -16,7 +16,7 @@ class PostsController extends AdminAuth
 		'upload_path' => UPLOAD_PATH,
 		'upload_url'  => '/public/uploads/',
         'ckeditor'    => array(
-            'id'     => 'ckeditor-post_content',
+            'id'     => 'ckeditor_post_content',
             //Optionnal values
             'config' => array(
                 'width'  => "100%", //Setting a custom width
@@ -99,7 +99,7 @@ class PostsController extends AdminAuth
         $this->data['edit_fields'] = array(
             'post_title'     => array('type' => 'text', 'label' => '标题'),
             'post_excerpt'   => array('type' => 'textarea', 'label' => '摘要'),
-            'post_content'   => array('type' => 'textarea', 'label' => '内容'),
+            'post_content'   => array('type' => 'textarea', 'label' => '内容','id'=>'ckeditor_post_content'),
             'feature_image'  => array('type' => 'file','label'     => '特色图片'),
             'status'         => array('type' => 'radio', 'label' => '状态','default'=> array(-1 => '删除', 0 => '草稿', 1 => '发布',2 => '待审核')),
             'hr1'            => array('type' => 'hr'),

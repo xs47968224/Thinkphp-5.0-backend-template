@@ -145,8 +145,8 @@
                     {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
 
                     <textarea
-                        class="form-control"
-                        id="ckeditor-{$key}"
+                        class="form-control {if isset($field['class']) AND $field['class']}{$field['class']}{/if}"
+                        {if isset($field['id']) AND $field['id']}id="{$field['id']}"{/if}
                         name="{$key}"
                         {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if}>{if isset($item[$key]) AND $item[$key]}{$item[$key]}{/if}</textarea>
                     {if(isset($data.ckeditor) and $data.ckeditor)}{:display_ckeditor($data.ckeditor);}{/if}
