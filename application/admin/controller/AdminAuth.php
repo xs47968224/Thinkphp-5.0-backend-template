@@ -53,7 +53,7 @@ class AdminAuth extends Controller {
 		$user = $user->where($where_query)->find();
         if (!$user) {
         	//注销当前账号
-        	session(null, 'think');
+        	session(null);
 
             $this->error('登录失效:用户密码已更改','/admin/login');
         }
@@ -74,7 +74,7 @@ class AdminAuth extends Controller {
 		$user = $user->where($where_query)->find();
         if ((time() > strtotime($user->expire_time))) { //登录超时
         	//注销当前账号
-        	session(null, 'think');
+        	session(null);
 
             $this->error('账号已过期','/admin/login');
         }
