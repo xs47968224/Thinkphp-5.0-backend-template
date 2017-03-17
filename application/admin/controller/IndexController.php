@@ -49,10 +49,10 @@ class IndexController extends AdminAuth
             );
         if ($user = $user->where($where_query)->find()) {
             //注册session
-            session('uid',$user->id,'think');
-            session('admin_username',$user->username,'think');
-            session('admin_password',$user->password,'think');
-            session('admin_nickname',$user->nickname,'think');
+            session('uid',$user->id);
+            session('admin_username',$user->username);
+            session('admin_password',$user->password);
+            session('admin_nickname',$user->nickname);
 
             //更新最后请求IP及时间
             $request = request();
@@ -81,7 +81,7 @@ class IndexController extends AdminAuth
      */
     public function logout(){
         $request = request();
-        session(null, 'think');
+        session(null);
         return $this->success('已成功登出', '/admin/login');
     }
 }
